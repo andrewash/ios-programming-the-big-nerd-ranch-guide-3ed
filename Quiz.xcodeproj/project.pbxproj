@@ -19,6 +19,8 @@
 		CB33FEBA16AB7AE700F37427 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB33FEB916AB7AE700F37427 /* QuizViewController.m */; };
 		CB33FEBD16AB7AE700F37427 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB33FEBB16AB7AE700F37427 /* QuizViewController.xib */; };
 		CB33FEC416AB855B00F37427 /* Bkgnd-Bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = CB33FEC316AB855B00F37427 /* Bkgnd-Bottles.png */; };
+		CB33FED516ABCF8900F37427 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CB33FED416ABCF8900F37427 /* Icon.png */; };
+		CB33FED716ABCF8D00F37427 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB33FED616ABCF8D00F37427 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		CB33FEB916AB7AE700F37427 /* QuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		CB33FEBC16AB7AE700F37427 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/QuizViewController.xib; sourceTree = "<group>"; };
 		CB33FEC316AB855B00F37427 /* Bkgnd-Bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bkgnd-Bottles.png"; sourceTree = "<group>"; };
+		CB33FED416ABCF8900F37427 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		CB33FED616ABCF8D00F37427 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		CB33FE9116AB7AE600F37427 = {
 			isa = PBXGroup;
 			children = (
+				CB33FED616ABCF8D00F37427 /* Icon@2x.png */,
+				CB33FED416ABCF8900F37427 /* Icon.png */,
 				CB33FEA616AB7AE600F37427 /* Quiz */,
 				CB33FE9F16AB7AE600F37427 /* Frameworks */,
 				CB33FE9D16AB7AE600F37427 /* Products */,
@@ -168,6 +174,8 @@
 				CB33FEB716AB7AE700F37427 /* Default-568h@2x.png in Resources */,
 				CB33FEBD16AB7AE700F37427 /* QuizViewController.xib in Resources */,
 				CB33FEC416AB855B00F37427 /* Bkgnd-Bottles.png in Resources */,
+				CB33FED516ABCF8900F37427 /* Icon.png in Resources */,
+				CB33FED716ABCF8D00F37427 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
