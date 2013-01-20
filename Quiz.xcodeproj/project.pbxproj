@@ -18,6 +18,7 @@
 		CB33FEB716AB7AE700F37427 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB33FEB616AB7AE700F37427 /* Default-568h@2x.png */; };
 		CB33FEBA16AB7AE700F37427 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB33FEB916AB7AE700F37427 /* QuizViewController.m */; };
 		CB33FEBD16AB7AE700F37427 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB33FEBB16AB7AE700F37427 /* QuizViewController.xib */; };
+		CB33FEC416AB855B00F37427 /* Bkgnd-Bottles.png in Resources */ = {isa = PBXBuildFile; fileRef = CB33FEC316AB855B00F37427 /* Bkgnd-Bottles.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CB33FEB816AB7AE700F37427 /* QuizViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		CB33FEB916AB7AE700F37427 /* QuizViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
 		CB33FEBC16AB7AE700F37427 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/QuizViewController.xib; sourceTree = "<group>"; };
+		CB33FEC316AB855B00F37427 /* Bkgnd-Bottles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bkgnd-Bottles.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		CB33FEA716AB7AE600F37427 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB33FEC316AB855B00F37427 /* Bkgnd-Bottles.png */,
 				CB33FEA816AB7AE600F37427 /* Quiz-Info.plist */,
 				CB33FEA916AB7AE600F37427 /* InfoPlist.strings */,
 				CB33FEAC16AB7AE700F37427 /* main.m */,
@@ -164,6 +167,7 @@
 				CB33FEB516AB7AE700F37427 /* Default@2x.png in Resources */,
 				CB33FEB716AB7AE700F37427 /* Default-568h@2x.png in Resources */,
 				CB33FEBD16AB7AE700F37427 /* QuizViewController.xib in Resources */,
+				CB33FEC416AB855B00F37427 /* Bkgnd-Bottles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
