@@ -10,6 +10,7 @@
 		CBD2226216ACF43E00B1AC67 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD2226116ACF43E00B1AC67 /* Foundation.framework */; };
 		CBD2226516ACF43E00B1AC67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD2226416ACF43E00B1AC67 /* main.m */; };
 		CBD2226916ACF43E00B1AC67 /* RandomPossessions.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CBD2226816ACF43E00B1AC67 /* RandomPossessions.1 */; };
+		CBE6483D16ADF5DF00700C2C /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE6483C16ADF5DF00700C2C /* BNRItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		CBD2226416ACF43E00B1AC67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CBD2226716ACF43E00B1AC67 /* RandomPossessions-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RandomPossessions-Prefix.pch"; sourceTree = "<group>"; };
 		CBD2226816ACF43E00B1AC67 /* RandomPossessions.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = RandomPossessions.1; sourceTree = "<group>"; };
+		CBE6483B16ADF5DF00700C2C /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		CBE6483C16ADF5DF00700C2C /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD2226416ACF43E00B1AC67 /* main.m */,
+				CBE6483B16ADF5DF00700C2C /* BNRItem.h */,
+				CBE6483C16ADF5DF00700C2C /* BNRItem.m */,
 				CBD2226816ACF43E00B1AC67 /* RandomPossessions.1 */,
 				CBD2226616ACF43E00B1AC67 /* Supporting Files */,
 			);
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBD2226516ACF43E00B1AC67 /* main.m in Sources */,
+				CBE6483D16ADF5DF00700C2C /* BNRItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +242,7 @@
 				CBD2226E16ACF43E00B1AC67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

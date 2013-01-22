@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BNRItem.h"
 
 int main(int argc, const char * argv[])
 {
@@ -29,6 +30,19 @@ int main(int argc, const char * argv[])
             //  which implicitly sends the description message to that object
             NSLog(@"%@", [items objectAtIndex:i]);
         }
+        
+        BNRItem *p = [[BNRItem alloc] init];
+        
+        // This creates a new NSString, "Red Sofa", and gives it to the BNRItem
+        [p setItemName:@"Red Sofa"];
+        
+        // This creates a new NSString, "A1B2C", and gives it to the BNRItem
+        [p setSerialNumber:@"A2B2C"];
+        [p setValueInDollars:100];
+        
+        
+        NSLog(@"%@ %@ %@ %d", [p itemName], [p dateCreated],
+              [p serialNumber], [p valueInDollars]);
         
         // Destroy the array pointed to by items
         items = nil;
