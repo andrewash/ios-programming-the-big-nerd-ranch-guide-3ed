@@ -15,11 +15,14 @@ int main(int argc, const char * argv[])
         // Create a mutable array object, store its address in items variable
         NSMutableArray *items = [[NSMutableArray alloc] init];
 
-        BNRItem *p = [[BNRItem alloc] initWithItemName:@"Red Sofa"
-                                        valueInDollars:100
-                                          serialNumber:@"A1B2C"];
+        for (int i=0; i < 10; i++) {
+            BNRItem *p = [BNRItem randomItem];
+            [items addObject:p];
+        }
         
-        NSLog(@"%@", p);
+        for (int i=0; i < [items count]; i++) {
+            NSLog(@"%@", [items objectAtIndex:i]);
+        }
         
         // Destroy the array pointed to by items
         items = nil;

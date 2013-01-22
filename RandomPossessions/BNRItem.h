@@ -16,6 +16,8 @@
     NSDate *dateCreated;
 }
 
++ (id)randomItem;
+
 - (id)initWithItemName: (NSString *)name
         valueInDollars: (int)value
           serialNumber: (NSString *)sNumber;
