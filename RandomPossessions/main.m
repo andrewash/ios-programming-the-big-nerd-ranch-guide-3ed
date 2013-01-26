@@ -19,10 +19,13 @@ int main(int argc, const char * argv[])
             BNRItem *p = [BNRItem randomItem];
             [items addObject:p];
         }
+        BNRItem *pSilverC = [[BNRItem alloc] initWithItemName:@"Silver Challenge" serialNumber:@"Q1R2Z"];
+        [items addObject:pSilverC];
         
         for (BNRItem *item in items) {
             NSLog(@"%@", item);
         }
+        
         
         // Destroy the array pointed to by items
         items = nil;

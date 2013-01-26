@@ -21,6 +21,8 @@
 - (id)initWithItemName: (NSString *)name
         valueInDollars: (int)value
           serialNumber: (NSString *)sNumber;
+- (id)initWithItemName: (NSString *)name
+          serialNumber: (NSString *)sNumber;
 
 - (void)setItemName: (NSString *)str;
 - (NSString *)itemName;
