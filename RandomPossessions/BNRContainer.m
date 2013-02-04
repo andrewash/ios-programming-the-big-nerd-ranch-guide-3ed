@@ -10,7 +10,7 @@
 {
     //learned to use an NSMutableString so we can append to it (an NSString is immutable)
     NSMutableString *descriptionString =
-    [[NSMutableString alloc] initWithFormat:@"Container: %@ (%@): Worth $%d, recorded on %@",
+    [[NSMutableString alloc] initWithFormat:@"\nContainer: %@ (%@): Worth $%d, recorded on %@",
      itemName,
      serialNumber,
      valueInDollars,
@@ -24,7 +24,7 @@
     //bug: Nested containers are not indented, so the output is a little tricky to read
     // resolved as: By Design)
     // notes:       Explored http://goo.gl/vse2U for options to fix this; decided it's acceptable as-is.
-    [descriptionString appendFormat:@"\n\tTOTAL VALUE (including container):\t$%d", [self valueInDollars]];
+    [descriptionString appendFormat:@"\n\tTOTAL VALUE (including container):\t$%d\n", [self valueInDollars]];
     
     return descriptionString;
 }
