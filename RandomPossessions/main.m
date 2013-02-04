@@ -36,6 +36,13 @@ int main(int argc, const char * argv[])
             [c addItem:[BNRItem randomItem]];
         }
         
+        BNRContainer *c2 = [[BNRContainer alloc] initWithItemName:@"Ziploc bag" valueInDollars:1 serialNumber:@"N/A"];
+        [c2 addItem:[[BNRItem alloc] initWithItemName:@"USB 3 cable" valueInDollars:6 serialNumber:@"N/A"]];
+        [c2 addItem:[[BNRItem alloc] initWithItemName:@"Thunderbolt cable, 3'" valueInDollars:29 serialNumber:@"N/A"]];
+        [c2 addItem:[[BNRItem alloc] initWithItemName:@"micro USB 2 cable" valueInDollars:5 serialNumber:@"N/A"]];
+        
+        [c addItem:c2];
+        
         NSLog(@"%@", c);
         
         // Destroy the array pointed to by items

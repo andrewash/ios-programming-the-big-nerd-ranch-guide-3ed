@@ -20,7 +20,10 @@
     for (BNRItem *item in subitems) {
         [descriptionString appendFormat:@"\n\t%@", item];
     }
-        
+
+    //bug: Nested containers are not indented, so the output is a little tricky to read
+    // resolved as: By Design)
+    // notes:       Explored http://goo.gl/vse2U for options to fix this; decided it's acceptable as-is.
     [descriptionString appendFormat:@"\n\tTOTAL VALUE (including container):\t$%d", [self calcTotalValue]];
     
     return descriptionString;
