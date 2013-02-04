@@ -21,6 +21,7 @@
 - (id)initWithItemName: (NSString *)name
         valueInDollars: (int)value
           serialNumber: (NSString *)sNumber;
+// Assignment #1, Q1 (Ch. 2, Silver Challenge)
 - (id)initWithItemName: (NSString *)name
           serialNumber: (NSString *)sNumber;
 
