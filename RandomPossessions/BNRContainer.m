@@ -24,7 +24,7 @@
     //bug: Nested containers are not indented, so the output is a little tricky to read
     // resolved as: By Design)
     // notes:       Explored http://goo.gl/vse2U for options to fix this; decided it's acceptable as-is.
-    [descriptionString appendFormat:@"\n\tTOTAL VALUE (including container):\t$%d", [self calcTotalValue]];
+    [descriptionString appendFormat:@"\n\tTOTAL VALUE (including container):\t$%d", [self valueInDollars]];
     
     return descriptionString;
 }
@@ -51,7 +51,7 @@
     [subitems addObject:newItem];
 }
 
-- (int)calcTotalValue
+- (int)valueInDollars;
 {
     int totalValue = 0;
     
@@ -60,7 +60,7 @@
     }
     
     // total value = {sum of values of each item in container} + {value of the container itself}
-    totalValue += [self valueInDollars];
+    totalValue += [super valueInDollars];   //bugfix: not [self valueInDollars] b/c that causes infinite loop.
 
     return totalValue;
 }

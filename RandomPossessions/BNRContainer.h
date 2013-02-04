@@ -13,5 +13,5 @@
         valueInDollars: (int)value
           serialNumber: (NSString *)sNumber;
 - (void)addItem: (BNRItem *)newItem;
-- (int)calcTotalValue;
+- (int)valueInDollars;
 @end
