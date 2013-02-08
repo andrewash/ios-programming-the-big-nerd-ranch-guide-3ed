@@ -18,6 +18,7 @@
 		CB1E737816C5B9E6001F0D4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB1E737716C5B9E6001F0D4C /* Default-568h@2x.png */; };
 		CB1E737B16C5B9E6001F0D4C /* WhereamiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1E737A16C5B9E6001F0D4C /* WhereamiViewController.m */; };
 		CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */; };
+		CB1E738516C5BA14001F0D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1E738416C5BA14001F0D4C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CB1E737916C5B9E6001F0D4C /* WhereamiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhereamiViewController.h; sourceTree = "<group>"; };
 		CB1E737A16C5B9E6001F0D4C /* WhereamiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiViewController.m; sourceTree = "<group>"; };
 		CB1E737D16C5B9E6001F0D4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WhereamiViewController.xib; sourceTree = "<group>"; };
+		CB1E738416C5BA14001F0D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1E738516C5BA14001F0D4C /* CoreLocation.framework in Frameworks */,
 				CB1E736216C5B9E6001F0D4C /* UIKit.framework in Frameworks */,
 				CB1E736416C5B9E6001F0D4C /* Foundation.framework in Frameworks */,
 				CB1E736616C5B9E6001F0D4C /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +76,7 @@
 		CB1E736016C5B9E6001F0D4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB1E738416C5BA14001F0D4C /* CoreLocation.framework */,
 				CB1E736116C5B9E6001F0D4C /* UIKit.framework */,
 				CB1E736316C5B9E6001F0D4C /* Foundation.framework */,
 				CB1E736516C5B9E6001F0D4C /* CoreGraphics.framework */,
@@ -227,7 +231,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -251,7 +255,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
