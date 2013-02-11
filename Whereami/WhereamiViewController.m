@@ -31,6 +31,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    // Tell the location manager to stop sending us messages
+    //   FYI - needed b/c delegate is __unsafe_unretained, so ARC doesn't apply
+    [locationManager setDelegate:nil];
+}
+
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
