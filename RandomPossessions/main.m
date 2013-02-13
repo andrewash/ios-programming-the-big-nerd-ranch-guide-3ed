@@ -3,12 +3,10 @@
 //  RandomPossessions
 //
 //  Created by aash on 2013-01-20.
-//  Copyright (c) 2013 Zen Mensch Apps. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
-#import "BNRContainer.h"   // Assignment #1, Q2
+#import "BNRContainer.h"   //---- Assignment #1, Q2 ====
 
 int main(int argc, const char * argv[])
 {
@@ -21,6 +19,7 @@ int main(int argc, const char * argv[])
             [items addObject:p];
         }
         
+        //------------------------------------------------------------------------------------
         // Assignment #1, Q1 (Ch. 2, Silver Challenge)
         BNRItem *pSilverC = [[BNRItem alloc] initWithItemName:@"Silver Challenge" serialNumber:@"Q1R2Z"];
         [items addObject:pSilverC];
@@ -29,7 +28,10 @@ int main(int argc, const char * argv[])
         for (BNRItem *item in items) {
             NSLog(@"%@", item);
         }
+        //====================================================================================
         
+        
+        //------------------------------------------------------------------------------------
         // Assignment #1, Q2 (Ch. 2, Gold Challenge)
         BNRContainer *c = [[BNRContainer alloc] initWithItemName:@"Gregory 60L Backpack" valueInDollars:140 serialNumber:@"Q18S4"];
         for (int i=0; i < 5; i++) {
@@ -44,6 +46,7 @@ int main(int argc, const char * argv[])
         [c addItem:c2];
         
         NSLog(@"%@", c);
+        //====================================================================================
         
         // Destroy the array pointed to by items
         items = nil;

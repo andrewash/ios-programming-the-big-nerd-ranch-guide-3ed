@@ -3,8 +3,6 @@
 //  RandomPossessions
 //
 //  Created by aash on 2013-01-21.
-//  Copyright (c) 2013 Zen Mensch Apps. All rights reserved.
-//
 
 #import "BNRItem.h"
 
@@ -68,6 +66,7 @@
     return newItem;
 }
 
+//------------------------------------------------------------------------------------
 // Assignment #1, Q1 (Ch. 2, Silver Challenge)
 - (id)initWithItemName:(NSString *)name
           serialNumber:(NSString *)sNumber
@@ -76,7 +75,7 @@
                    valueInDollars:0
                      serialNumber:sNumber];
 }
-// --
+//====================================================================================
 
 - (id)initWithItemName:(NSString *)name
         valueInDollars:(int)value

@@ -3,8 +3,6 @@
 //  RandomPossessions
 //
 //  Created by aash on 2013-01-21.
-//  Copyright (c) 2013 Zen Mensch Apps. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
@@ -21,9 +19,13 @@
 - (id)initWithItemName: (NSString *)name
         valueInDollars: (int)value
           serialNumber: (NSString *)sNumber;
+
+
+//------------------------------------------------------------------------------------
 // Assignment #1, Q1 (Ch. 2, Silver Challenge)
 - (id)initWithItemName: (NSString *)name
           serialNumber: (NSString *)sNumber;
+//====================================================================================
 
 - (void)setItemName: (NSString *)str;
 - (NSString *)itemName;
