@@ -31,6 +31,21 @@
         
         // Tell our manager to start looking for its location immediately
         [locationManager startUpdatingLocation];
+        
+        //------------------------------------------------------------------------------------
+        // Assignment #1, Q4 (Ch. 4, Silver Challenge)
+
+        // Start heading updates.
+        if ([CLLocationManager headingAvailable]) {
+            // Warning: test this code path on a device, not in iPhone Simulator
+            // "heading information is available only for devices that contain a hardware compass" (docs)
+            [locationManager setHeadingFilter:5];
+            [locationManager startUpdatingHeading];
+        }
+        else {
+            NSLog(@"warning: heading information not available for this device/simulator");
+        }
+        //====================================================================================
     }
     
     return self;
@@ -48,24 +63,7 @@
 {
     NSLog(@"%@", newLocation);
 
-    //------------------------------------------------------------------------------------
-    // Assignment #1, Q4 (Ch. 4, Silver Challenge)
-    // FYI - from docs:
-    //   "Implementation of this method is optional but expected if you start heading updates using
-    //     the startUpdatingHeading method."
-    //   "The location manager object calls this method after you initially start the heading service.
-    //     Subsequent events are delivered when the previously reported value changes by more than the
-    //     value specified in the headingFilter property of the location manager object.")
-    if([CLLocationManager headingAvailable]) // note: docs say to use the headingAvailable class method, instead of the instance method.
-    {
-        [locationManager startUpdatingHeading];
-        NSLog(@"debug: heading information is available");
-    }
-    else
-    {
-        NSLog(@"warning: heading information not available for this device");
-    }
-    //====================================================================================
+        //====================================================================================
 
 }
 
@@ -77,10 +75,18 @@
 
 //------------------------------------------------------------------------------------
 // Assignment #1, Q4 (Ch. 4, Silver Challenge)
+// - uses best practices from "Getting Direction-Related Events" in iOS 6.1 docs
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateHeading:(CLHeading *)newHeading
 {
-    NSLog(@"%@", newHeading);
+    if (newHeading.headingAccuracy < 0 )
+        return;
+    
+    // Log true heading if valid, o/w log magnetic heading
+    CLLocationDirection theHeading = ((newHeading.trueHeading > 0) ?
+                                       newHeading.trueHeading : newHeading.magneticHeading);
+    
+    NSLog(@"User's heading is %f", theHeading);
 }
 
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
@@ -88,12 +94,5 @@
     return true;
 }
 //====================================================================================
-
-// - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager
-//     --- vs. ---
-// - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-// Theory => the first method *could have been* declared as
-// - (BOOL)locationManager:(CLLocationManager *)manager shouldDisplayHeadingCalibration
-
 
 @end
