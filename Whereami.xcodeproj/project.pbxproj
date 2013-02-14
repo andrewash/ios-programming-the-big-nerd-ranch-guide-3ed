@@ -20,6 +20,7 @@
 		CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */; };
 		CB1E738516C5BA14001F0D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1E738416C5BA14001F0D4C /* CoreLocation.framework */; };
 		CBD368D816CD988C00EA3260 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD368D716CD988C00EA3260 /* MapKit.framework */; };
+		CBD368DA16CDA38400EA3260 /* Home (Thornhill, Ontario).gpx in Resources */ = {isa = PBXBuildFile; fileRef = CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		CB1E737D16C5B9E6001F0D4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WhereamiViewController.xib; sourceTree = "<group>"; };
 		CB1E738416C5BA14001F0D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CBD368D716CD988C00EA3260 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Home (Thornhill, Ontario).gpx"; path = "../Home (Thornhill, Ontario).gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		CB1E736816C5B9E6001F0D4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */,
 				CB1E736916C5B9E6001F0D4C /* Whereami-Info.plist */,
 				CB1E736A16C5B9E6001F0D4C /* InfoPlist.strings */,
 				CB1E736D16C5B9E6001F0D4C /* main.m */,
@@ -172,6 +175,7 @@
 				CB1E737616C5B9E6001F0D4C /* Default@2x.png in Resources */,
 				CB1E737816C5B9E6001F0D4C /* Default-568h@2x.png in Resources */,
 				CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */,
+				CBD368DA16CDA38400EA3260 /* Home (Thornhill, Ontario).gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
