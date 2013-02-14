@@ -28,10 +28,7 @@
         // Assignment #1, Q3 (Ch. 4, Bronze Challenge)
         [locationManager setDistanceFilter:50.0];
         //====================================================================================
-        
-        // Tell our manager to start looking for its location immediately
-        [locationManager startUpdatingLocation];
-        
+                
         //------------------------------------------------------------------------------------
         // Assignment #1, Q4 (Ch. 4, Silver Challenge)
 
@@ -49,6 +46,11 @@
     }
     
     return self;
+}
+
+- (void)viewDidLoad
+{
+    [worldView setShowsUserLocation:YES];
 }
 
 - (void)dealloc
