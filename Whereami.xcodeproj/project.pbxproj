@@ -19,6 +19,7 @@
 		CB1E737B16C5B9E6001F0D4C /* WhereamiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1E737A16C5B9E6001F0D4C /* WhereamiViewController.m */; };
 		CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */; };
 		CB1E738516C5BA14001F0D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1E738416C5BA14001F0D4C /* CoreLocation.framework */; };
+		CB4FA07516D2EC42008C8B94 /* BNRMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */; };
 		CBD368D816CD988C00EA3260 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD368D716CD988C00EA3260 /* MapKit.framework */; };
 		CBD368DA16CDA38400EA3260 /* Home (Thornhill, Ontario).gpx in Resources */ = {isa = PBXBuildFile; fileRef = CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,8 @@
 		CB1E737A16C5B9E6001F0D4C /* WhereamiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhereamiViewController.m; sourceTree = "<group>"; };
 		CB1E737D16C5B9E6001F0D4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/WhereamiViewController.xib; sourceTree = "<group>"; };
 		CB1E738416C5BA14001F0D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CB4FA07316D2EC42008C8B94 /* BNRMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRMapPoint.h; sourceTree = "<group>"; };
+		CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRMapPoint.m; sourceTree = "<group>"; };
 		CBD368D716CD988C00EA3260 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Home (Thornhill, Ontario).gpx"; path = "../Home (Thornhill, Ontario).gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +100,8 @@
 				CB1E737116C5B9E6001F0D4C /* WhereamiAppDelegate.m */,
 				CB1E737916C5B9E6001F0D4C /* WhereamiViewController.h */,
 				CB1E737A16C5B9E6001F0D4C /* WhereamiViewController.m */,
+				CB4FA07316D2EC42008C8B94 /* BNRMapPoint.h */,
+				CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */,
 				CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */,
 				CB1E736816C5B9E6001F0D4C /* Supporting Files */,
 			);
@@ -189,6 +194,7 @@
 				CB1E736E16C5B9E6001F0D4C /* main.m in Sources */,
 				CB1E737216C5B9E6001F0D4C /* WhereamiAppDelegate.m in Sources */,
 				CB1E737B16C5B9E6001F0D4C /* WhereamiViewController.m in Sources */,
+				CB4FA07516D2EC42008C8B94 /* BNRMapPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
