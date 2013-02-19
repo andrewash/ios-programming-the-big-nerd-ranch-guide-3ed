@@ -11,9 +11,6 @@
 
 @implementation WhereamiViewController
 
-
-
-
 - (void)findLocation
 {
     [locationManager startUpdatingLocation];
@@ -115,6 +112,19 @@
     didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     NSLog(@"%@", newLocation);
+    
+    // How many seconds ago was this new location created?
+    NSTimeInterval t = [[newLocation timestamp] timeIntervalSinceNow];
+    
+    // CLLocationManagers will return the last found location of the
+    //  device first, you don't want that data in this case.
+    // If this location was made more than 3 minutes ago, ignore it.
+    if (t < -180) {
+        // This is cached data, you don't want it, keep looking
+        return;
+    }
+    
+    [self foundLocation:newLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager
