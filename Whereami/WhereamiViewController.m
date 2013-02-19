@@ -11,6 +11,34 @@
 
 @implementation WhereamiViewController
 
+//------------------------------------------------------------------------------------
+// Assignment #2, Q2 (Ch. 5, Silver Challenge)
+//   typeSelectorValueChanged is the Target set in viewDidLoad for the Action UIControlEventValueChanged
+- (void)typeSelectorValueChanged:(id)sender
+{
+    UISegmentedControl *t = (UISegmentedControl *)sender;
+    switch ([t selectedSegmentIndex])
+    {
+        case 0:
+            [worldView setMapType:MKMapTypeStandard];
+            break;
+        case 1:
+            [worldView setMapType:MKMapTypeSatellite];
+            break;
+        case 2:
+            [worldView setMapType:MKMapTypeHybrid];
+            break;
+        case UISegmentedControlNoSegment:
+            NSLog(@"error: typeSelector says no segment is currently selected. This should not be possible.");
+            break;
+        default:
+            NSLog (@"error: [typeSelector selectedSegmentIndex] is out of range");
+            break;
+    }
+
+}
+//====================================================================================
+
 - (void)findLocation
 {
     [locationManager startUpdatingLocation];
@@ -91,6 +119,27 @@
 - (void)viewDidLoad
 {
     [worldView setShowsUserLocation:YES];
+    
+    //------------------------------------------------------------------------------------
+    // Assignment #2, Q1 (Ch. 5, Bronze Challenge)
+    // - sets default map view to Satellite
+    [worldView setMapType:MKMapTypeSatellite];
+    //====================================================================================
+
+    //------------------------------------------------------------------------------------
+    // Assignment #2, Q2 (Ch. 5, Silver Challenge)
+    //  Sets default map view to Satellite
+    [typeSelector setSelectedSegmentIndex:1];
+
+    //  Adds a Target-Action to the typeSelector control
+    //   FYI - that's the only way I could figure out to make the control respond to events, although this technique is not covered in Ch. 5 as far as I can tell...
+    //    the good:  it works.
+    //    less good: it took 60mins to research & implement.
+    //    overall: I'm happy.
+    [typeSelector addTarget:self
+                     action:@selector(typeSelectorValueChanged:)
+           forControlEvents:UIControlEventValueChanged];
+    //====================================================================================
 }
 
 - (void)dealloc
@@ -99,14 +148,6 @@
     //   FYI - needed b/c delegate is __unsafe_unretained, so ARC doesn't apply
     [locationManager setDelegate:nil];
 }
-
-//------------------------------------------------------------------------------------
-// Assignment #2, Q1 (Ch. 5, Bronze Challenge)
-- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView
-{
-    [mapView setMapType:MKMapTypeSatellite];
-}
-//====================================================================================
 
 - (void)mapView:(MKMapView *)mapView
     didUpdateUserLocation:(MKUserLocation *)userLocation
