@@ -100,6 +100,14 @@
     [locationManager setDelegate:nil];
 }
 
+//------------------------------------------------------------------------------------
+// Assignment #2, Q1 (Ch. 5, Bronze Challenge)
+- (void)mapViewWillStartLoadingMap:(MKMapView *)mapView
+{
+    [mapView setMapType:MKMapTypeSatellite];
+}
+//====================================================================================
+
 - (void)mapView:(MKMapView *)mapView
     didUpdateUserLocation:(MKUserLocation *)userLocation
 {
