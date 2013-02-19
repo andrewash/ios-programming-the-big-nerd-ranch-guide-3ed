@@ -3,12 +3,55 @@
 //  Andrew Ash
 
 #import "WhereamiViewController.h"
+#import "BNRMapPoint.h"
 
 @interface WhereamiViewController ()
 
 @end
 
 @implementation WhereamiViewController
+
+
+
+
+- (void)findLocation
+{
+    [locationManager startUpdatingLocation];
+    [activityIndicator startAnimating];
+    [locationTitleField setHidden:YES];
+}
+
+- (void)foundLocation:(CLLocation *)loc
+{
+    CLLocationCoordinate2D coord = [loc coordinate];
+    
+    // Create an instance of BNRMapPoint with the current data
+    BNRMapPoint *mp = [[BNRMapPoint alloc] initWithCoordinate:coord
+                                                         title:[locationTitleField text]];
+    
+    // Add it to the map view
+    [worldView addAnnotation:mp];
+    
+    // Zoom the region to this location
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(coord, 250, 250);
+    [worldView setRegion:region animated:YES];
+    
+    // Reset the UI
+    [locationTitleField setText:@""];
+    [activityIndicator stopAnimating];
+    [locationTitleField setHidden:NO];
+    [locationManager stopUpdatingLocation];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // This method isn't implemented yet - but will be soon
+    [self findLocation];
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
