@@ -53,6 +53,38 @@
         // Perform drawing instruction; removes path
         CGContextStrokePath(ctx);
     }
+    
+    // Create a string
+    NSString *text = @"You will soon get laid.";
+    
+    // Get a font to draw it in
+    UIFont *font = [UIFont boldSystemFontOfSize:28];
+    
+    CGRect textRect;
+    
+    // How big is this string when drawn in this font?
+    textRect.size = [text sizeWithFont:font];
+    
+    // Let's put that string in the centre of the view
+    textRect.origin.x = centre.x - textRect.size.width / 2.0;
+    textRect.origin.y = centre.y - textRect.size.height / 2.0;
+    
+    // Set the fill colour of the current context to black
+    [[UIColor blackColor] setFill];
+    
+    // The shadow will move 4 points to the right, and 3 points down from the text
+    CGSize offset = CGSizeMake(4, 3);
+    
+    // The shadow will be dark gray in color
+    CGColorRef colour = [[UIColor darkGrayColor] CGColor];
+    
+    // Set the shadow of hte context with these parameters,
+    //  all subsequent drawings will be shadowed
+    CGContextSetShadowWithColor(ctx, offset, 2.0, colour);
+    
+    // Draw the string
+    [text drawInRect:textRect
+            withFont:font];
 }
 
 
