@@ -89,5 +89,22 @@
             withFont:font];
 }
 
+// FYI - a responder object must explicitly state that it is willing to become the first responder.
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
 
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    NSLog(@"Device started shaking!");
+    [self setCircleColour:[UIColor redColor]];
+}
+
+- (void)setCircleColour:(UIColor *)clr
+{
+    _circleColour = clr;
+    [self setNeedsDisplay];
+    
+}
 @end
