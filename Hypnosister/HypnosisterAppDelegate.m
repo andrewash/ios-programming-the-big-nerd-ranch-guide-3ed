@@ -15,14 +15,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    CGRect viewFrame = CGRectMake(160, 240, 100, 150);
-    CGRect anotherFrame = CGRectMake(20, 30, 50, 50);
-    
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:viewFrame];
-    HypnosisView *anotherView = [[HypnosisView alloc] initWithFrame:anotherFrame];
-    
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:[[self window] bounds]];
     [[self window] addSubview:view];
-    [view addSubview:anotherView];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
