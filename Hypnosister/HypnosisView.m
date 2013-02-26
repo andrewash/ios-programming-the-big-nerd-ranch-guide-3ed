@@ -57,7 +57,7 @@
     }
     
     // Create a string
-    NSString *text = @"You will soon get laid.";
+    NSString *text = @"You are getting sleepy.";
     
     // Get a font to draw it in
     UIFont *font = [UIFont boldSystemFontOfSize:28];
@@ -97,14 +97,15 @@
 
 - (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    NSLog(@"Device started shaking!");
-    [self setCircleColour:[UIColor redColor]];
+    if (motion == UIEventSubtypeMotionShake) {
+        NSLog(@"Device started shaking!");
+        [self setCircleColour:[UIColor redColor]];
+    }
 }
 
 - (void)setCircleColour:(UIColor *)clr
 {
     _circleColour = clr;
     [self setNeedsDisplay];
-    
 }
 @end
