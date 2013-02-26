@@ -16,6 +16,7 @@
     if (self) {
         // All HypnosisViews start with a clear background color
         [self setBackgroundColor:[UIColor clearColor]];
+        [self setCircleColour:[UIColor lightGrayColor]];
     }
     return self;
 }
@@ -37,7 +38,8 @@
     CGContextSetLineWidth(ctx, 10);
     
     // The color of the line should be gray (red/gren/blue = 0.6, alpha = 1.0)
-    [[UIColor lightGrayColor] setStroke];
+    [[self circleColour] setStroke];
+    
     // [[UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0] setStroke];
     // CGContextSetRGBStrokeColor(ctx, 0.6, 0.6, 0.6, 1.0);
     // ^^^ note to self: a good example of how Objective-C's message-selector syntax actually makes things clearer
