@@ -37,7 +37,12 @@
     CGContextSetLineWidth(ctx, 10);
     
     // The color of the line should be gray (red/gren/blue = 0.6, alpha = 1.0)
-    CGContextSetRGBStrokeColor(ctx, 0.6, 0.6, 0.6, 1.0);
+    [[UIColor lightGrayColor] setStroke];
+    // [[UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0] setStroke];
+    // CGContextSetRGBStrokeColor(ctx, 0.6, 0.6, 0.6, 1.0);
+    // ^^^ note to self: a good example of how Objective-C's message-selector syntax actually makes things clearer
+    //      vs. functions. You can see the names of each parameter (red, green, etc.), not just the values I happen to be passing.
+    //      those values could represent anything! Objective-C is more clear! Yay!  (OBJ: Is it too verbose?? Time will tell.)
     
     // Draw concentric circles from the outside in
     for (float currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20)
