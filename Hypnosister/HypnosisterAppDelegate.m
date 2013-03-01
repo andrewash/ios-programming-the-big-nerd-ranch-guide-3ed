@@ -15,8 +15,24 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    HypnosisView *view = [[HypnosisView alloc] initWithFrame:[[self window] bounds]];
-    [[self window] addSubview:view];
+//==HypnosisView should have a UIScrollView as its parent, rather than the window itself
+    CGRect screenRect = [[self window] bounds];
+    
+    // Create the UIScrollView whose size matches that of the window
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [[self window] addSubview:scrollView];
+    
+    // Create the HypnosisView with a frame that is twice the size of the screen
+    CGRect bigRect = screenRect;
+    bigRect.size.width *= 2.0;
+    bigRect.size.height *= 2.0;
+    HypnosisView *view = [[HypnosisView alloc] initWithFrame:bigRect];
+    
+    // Add the HypnosisView as a subview of the scrollView instead of the window
+    [scrollView addSubview:view];
+    
+    // Tell the scrollView how big its virtual world is
+    [scrollView setContentSize:bigRect.size];
     
     BOOL success = [view becomeFirstResponder];
     if (success) {
