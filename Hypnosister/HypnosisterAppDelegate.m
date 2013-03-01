@@ -20,6 +20,7 @@
     
     // Create the UIScrollView whose size (i.e. "frame size") matches that of the window
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+    [scrollView setPagingEnabled:YES];
     [[self window] addSubview:scrollView];
     
     // Create two HypnosisView instances.
