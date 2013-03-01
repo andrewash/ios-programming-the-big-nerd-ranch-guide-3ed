@@ -56,6 +56,13 @@
         CGContextStrokePath(ctx);
     }
     
+    //------------------------------------------------------------------------------------
+    // Assignment #2, Q3 (Ch. 6, Silver Challenge)
+    //   saves (aspects of) current context as a "graphics state" before we start drawing text
+    //     b/c before drawing text we set a shadow, which affects all future paths within that context
+    CGContextSaveGState(ctx);
+    //====================================================================================
+    
     // Create a string
     NSString *text = @"You are getting sleepy.";
     
@@ -80,13 +87,39 @@
     // The shadow will be dark gray in color
     CGColorRef colour = [[UIColor darkGrayColor] CGColor];
     
-    // Set the shadow of hte context with these parameters,
+    // Set the shadow of the context with these parameters,
     //  all subsequent drawings will be shadowed
     CGContextSetShadowWithColor(ctx, offset, 2.0, colour);
     
     // Draw the string
     [text drawInRect:textRect
             withFont:font];
+    
+    //------------------------------------------------------------------------------------
+    // Assignment #2, Q3 (Ch. 6, Silver Challenge)
+    //   define a path to represent "crosshairs", in centre of view. Looks like a + symbol, in green, with no shadow.
+    //   must be drawn on top of text
+    float radiusOfCrosshair = (bounds.size.width / 4.0) / 2.0;
+    
+    // Restore the most recently saved "graphics state" over the current context; Text must be drawn beforehand.
+    CGContextRestoreGState(ctx);
+    
+    // Set attributes of this shape/path
+    colour = [[UIColor greenColor] CGColor];
+    CGContextSetStrokeColorWithColor(ctx, colour);
+    CGContextSetLineWidth(ctx, 5);
+    
+
+    // Draw the crosshairs as 1 horizontal line
+    CGContextMoveToPoint(ctx, centre.x - radiusOfCrosshair, centre.y);
+    CGContextAddLineToPoint(ctx, centre.x + radiusOfCrosshair, centre.y);
+    // ... and 1 vertical line, intersecting at the centre
+    CGContextMoveToPoint(ctx, centre.x, centre.y - radiusOfCrosshair);
+    CGContextAddLineToPoint(ctx, centre.x, centre.y + radiusOfCrosshair);
+    
+    // Perform drawing instruction; removes path
+    CGContextStrokePath(ctx);
+    //====================================================================================
 }
 
 // FYI - a responder object must explicitly state that it is willing to become the first responder.
