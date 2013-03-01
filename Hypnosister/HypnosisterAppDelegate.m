@@ -20,25 +20,24 @@
     
     // Create the UIScrollView whose size (i.e. "frame size") matches that of the window
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
-    [scrollView setPagingEnabled:YES];
+    
+    [scrollView setMinimumZoomScale:1.0];
+    [scrollView setMaximumZoomScale:5.0];
+    
+    // You will get a warning here, ignore it for now
+    [scrollView setDelegate:self];
+    
     [[self window] addSubview:scrollView];
     
-    // Create two HypnosisView instances.
-    //  - dimensions of each are equal to size of the window (screenRect)
-    HypnosisView *view          = [[HypnosisView alloc] initWithFrame:screenRect];
-    HypnosisView *anotherView   = [[HypnosisView alloc] initWithFrame:screenRect];
+    // Create a HypnosisView instance, where:
+    //  - dimensions are equal to size of the window (screenRect)
+    view = [[HypnosisView alloc] initWithFrame:screenRect];
     
-    // Move the rectangle for the other HypnosisView to the right, just off the screen
-    screenRect.origin.x = screenRect.size.width;
-    [view setFrame:screenRect];
-
-    // Add each view as a subview of the scrollView, instead of the window
+    // Add the view as a subview of the scrollView, instead of the window
     [scrollView addSubview:view];
-    [scrollView addSubview:anotherView];
-        
+    
     // Tell the scrollView how big its virtual world is
     CGRect bigRect = screenRect;
-    bigRect.size.width *= 2.0;
     [scrollView setContentSize:bigRect.size];
     
     BOOL success = [view becomeFirstResponder];
@@ -51,6 +50,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return view;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
