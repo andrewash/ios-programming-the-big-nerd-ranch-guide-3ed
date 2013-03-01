@@ -15,6 +15,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    [[UIApplication sharedApplication] setStatusBarHidden:YES
+                                            withAnimation:UIStatusBarAnimationFade];
+    
+    
 //==HypnosisView should have a UIScrollView as its parent, rather than the window itself
     CGRect screenRect = [[self window] bounds];
     
