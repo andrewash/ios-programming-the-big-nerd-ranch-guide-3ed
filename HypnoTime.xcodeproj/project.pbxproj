@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB22C7BA16E3EB6200C76DA8 /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */; };
 		CB526D3716E3E9AB0002010D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3616E3E9AB0002010D /* UIKit.framework */; };
 		CB526D3916E3E9AB0002010D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3816E3E9AB0002010D /* Foundation.framework */; };
 		CB526D3B16E3E9AB0002010D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3A16E3E9AB0002010D /* CoreGraphics.framework */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisViewController.h; sourceTree = "<group>"; };
+		CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisViewController.m; sourceTree = "<group>"; };
 		CB526D3316E3E9AB0002010D /* HypnoTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB526D3616E3E9AB0002010D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB526D3816E3E9AB0002010D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -51,6 +54,8 @@
 		CB526D2A16E3E9AB0002010D = {
 			isa = PBXGroup;
 			children = (
+				CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */,
+				CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */,
 				CB526D3C16E3E9AB0002010D /* HypnoTime */,
 				CB526D3516E3E9AB0002010D /* Frameworks */,
 				CB526D3416E3E9AB0002010D /* Products */,
@@ -167,6 +172,7 @@
 			files = (
 				CB526D4316E3E9AB0002010D /* main.m in Sources */,
 				CB526D4716E3E9AB0002010D /* HypnoTimeAppDelegate.m in Sources */,
+				CB22C7BA16E3EB6200C76DA8 /* HypnosisViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +289,7 @@
 				CB526D5216E3E9AB0002010D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
