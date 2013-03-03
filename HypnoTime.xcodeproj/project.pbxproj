@@ -21,8 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisViewController.h; sourceTree = "<group>"; };
-		CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisViewController.m; sourceTree = "<group>"; };
+		CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HypnosisViewController.h; path = ../HypnosisViewController.h; sourceTree = "<group>"; };
+		CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HypnosisViewController.m; path = ../HypnosisViewController.m; sourceTree = "<group>"; };
 		CB526D3316E3E9AB0002010D /* HypnoTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB526D3616E3E9AB0002010D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB526D3816E3E9AB0002010D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,8 +36,8 @@
 		CB526D4816E3E9AB0002010D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB526D4A16E3E9AB0002010D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CB526D4C16E3E9AB0002010D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
-		CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
+		CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HypnosisView.h; path = ../HypnosisView.h; sourceTree = "<group>"; };
+		CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HypnosisView.m; path = ../HypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +57,6 @@
 		CB526D2A16E3E9AB0002010D = {
 			isa = PBXGroup;
 			children = (
-				CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */,
-				CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */,
-				CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */,
-				CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */,
 				CB526D3C16E3E9AB0002010D /* HypnoTime */,
 				CB526D3516E3E9AB0002010D /* Frameworks */,
 				CB526D3416E3E9AB0002010D /* Products */,
@@ -88,6 +84,10 @@
 		CB526D3C16E3E9AB0002010D /* HypnoTime */ = {
 			isa = PBXGroup;
 			children = (
+				CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */,
+				CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */,
+				CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */,
+				CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */,
 				CB526D4516E3E9AB0002010D /* HypnoTimeAppDelegate.h */,
 				CB526D4616E3E9AB0002010D /* HypnoTimeAppDelegate.m */,
 				CB526D3D16E3E9AB0002010D /* Supporting Files */,
