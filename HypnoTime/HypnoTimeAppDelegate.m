@@ -20,7 +20,12 @@
     
     TimeViewController *tvc = [[TimeViewController alloc] init];
     
-    [[self window] setRootViewController:tvc];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    NSArray *viewControllers = [NSArray arrayWithObjects:hvc, tvc, nil];
+    [tabBarController setViewControllers:viewControllers];
+    
+    [[self window] setRootViewController:tabBarController];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
