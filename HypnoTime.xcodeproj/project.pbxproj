@@ -17,6 +17,10 @@
 		CB526D4916E3E9AB0002010D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4816E3E9AB0002010D /* Default.png */; };
 		CB526D4B16E3E9AB0002010D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4A16E3E9AB0002010D /* Default@2x.png */; };
 		CB526D4D16E3E9AB0002010D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4C16E3E9AB0002010D /* Default-568h@2x.png */; };
+		CBB09DF716E55D1900E1B742 /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF316E55D1900E1B742 /* Hypno.png */; };
+		CBB09DF816E55D1900E1B742 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF416E55D1900E1B742 /* Hypno@2x.png */; };
+		CBB09DF916E55D1900E1B742 /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF516E55D1900E1B742 /* Time.png */; };
+		CBB09DFA16E55D1900E1B742 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF616E55D1900E1B742 /* Time@2x.png */; };
 		CBD95EEC16E3EE3E006627F1 /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */; };
 		CBD95EF216E3F37B006627F1 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EF116E3F37B006627F1 /* TimeViewController.m */; };
 		CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD95EF316E3F4E1006627F1 /* TimeViewController.xib */; };
@@ -38,6 +42,10 @@
 		CB526D4816E3E9AB0002010D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB526D4A16E3E9AB0002010D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CB526D4C16E3E9AB0002010D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CBB09DF316E55D1900E1B742 /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hypno.png; path = ../Hypno.png; sourceTree = "<group>"; };
+		CBB09DF416E55D1900E1B742 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hypno@2x.png"; path = "../Hypno@2x.png"; sourceTree = "<group>"; };
+		CBB09DF516E55D1900E1B742 /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Time.png; path = ../Time.png; sourceTree = "<group>"; };
+		CBB09DF616E55D1900E1B742 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Time@2x.png"; path = "../Time@2x.png"; sourceTree = "<group>"; };
 		CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HypnosisView.h; path = ../HypnosisView.h; sourceTree = "<group>"; };
 		CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HypnosisView.m; path = ../HypnosisView.m; sourceTree = "<group>"; };
 		CBD95EF016E3F37B006627F1 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
@@ -106,6 +114,10 @@
 		CB526D3D16E3E9AB0002010D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBB09DF316E55D1900E1B742 /* Hypno.png */,
+				CBB09DF416E55D1900E1B742 /* Hypno@2x.png */,
+				CBB09DF516E55D1900E1B742 /* Time.png */,
+				CBB09DF616E55D1900E1B742 /* Time@2x.png */,
 				CB526D3E16E3E9AB0002010D /* HypnoTime-Info.plist */,
 				CB526D3F16E3E9AB0002010D /* InfoPlist.strings */,
 				CB526D4216E3E9AB0002010D /* main.m */,
@@ -174,6 +186,10 @@
 				CB526D4B16E3E9AB0002010D /* Default@2x.png in Resources */,
 				CB526D4D16E3E9AB0002010D /* Default-568h@2x.png in Resources */,
 				CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */,
+				CBB09DF716E55D1900E1B742 /* Hypno.png in Resources */,
+				CBB09DF816E55D1900E1B742 /* Hypno@2x.png in Resources */,
+				CBB09DF916E55D1900E1B742 /* Time.png in Resources */,
+				CBB09DFA16E55D1900E1B742 /* Time@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
