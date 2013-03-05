@@ -117,6 +117,10 @@
     CGContextMoveToPoint(ctx, centre.x, centre.y - radiusOfCrosshair);
     CGContextAddLineToPoint(ctx, centre.x, centre.y + radiusOfCrosshair);
     
+    // and a circle (thanks to my neighbour for the good visual idea)
+    CGContextMoveToPoint(ctx, centre.x, centre.y);
+    CGContextSetLineWidth(ctx, 10);
+    CGContextAddArc(ctx, centre.x, centre.y, radiusOfCrosshair * 0.6 , 0.0, M_PI * 2.0, YES);
     // Perform drawing instruction; removes path
     CGContextStrokePath(ctx);
     //====================================================================================
