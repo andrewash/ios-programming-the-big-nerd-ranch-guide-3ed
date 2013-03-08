@@ -10,8 +10,12 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nil
-                           bundle:nil];
+    // Get a pointer to the application bundle object
+    NSBundle *appBundle = [NSBundle mainBundle];
+    
+    self = [super initWithNibName:@"TimeViewController"
+                           bundle:appBundle];
+    
     if (self) {
         // Get the tab bar item
         UITabBarItem *tbi = [self tabBarItem];
@@ -37,5 +41,12 @@
     [formatter setTimeStyle:NSDateFormatterMediumStyle];
     
     [timeLabel setText:[formatter stringFromDate:now]];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    NSLog(@"TimeViewController loaded its view.");
 }
 @end
