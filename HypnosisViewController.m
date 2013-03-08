@@ -39,4 +39,57 @@
     // Set it as *the* view of this view controller
     [self setView:v];       // sets "the view that this controller manages" (powerful!)
 }
+
+- (void)viewDidLoad
+{
+    // Always call the super implementation of viewDidLoad
+    [super viewDidLoad];
+    NSLog(@"HypnosisViewController loaded its view.");
+    
+    //-------------------------------------------------------------------------------
+    // Assignment #2, Q4 - Ch. 7, silver challenge
+    NSArray *colourChoices = [[NSArray alloc] initWithObjects: @"Red", @"Green", @"Blue", nil];
+    // Create an automatically sized UISegmentedControl based off a set of choices in an array
+    UISegmentedControl *colourChooser = [[UISegmentedControl alloc] initWithItems: colourChoices];
+
+    CGRect bounds = [[self view] bounds];
+    CGSize ccSize = [colourChooser bounds].size;
+    float xOffset = (bounds.size.width - ccSize.width) / 2.0;
+    float yOffset = (bounds.size.height - ccSize.height) * 0.75;
+    [colourChooser setFrame: CGRectMake(xOffset, yOffset, ccSize.width, ccSize.height)];
+    [[self view] addSubview:colourChooser];
+    
+    [colourChooser addTarget:self
+                      action:@selector(colourChooserValueChanged:)
+            forControlEvents:UIControlEventValueChanged];
+    //===============================================================================
+}
+
+//-------------------------------------------------------------------------------
+// Assignment #2, Q4 - Ch. 7, silver challenge
+// - respond to the colourChooser's "UIControlEventValueChanged" event
+- (void)colourChooserValueChanged:(id)sender
+{
+    UISegmentedControl *cc = (UISegmentedControl *)sender;
+    HypnosisView *v = (HypnosisView *) [self view];
+    switch([cc selectedSegmentIndex])
+    {
+        case 0:
+            [v setCircleColour: [UIColor redColor]];
+            break;
+        case 1:
+            [v setCircleColour: [UIColor greenColor]];
+            break;
+        case 2:
+            [v setCircleColour: [UIColor blueColor]];
+            break;
+        case UISegmentedControlNoSegment:
+            NSLog(@"error: colourChooser says no segment is currently selected. This should not be possible.");
+            break;
+        default:
+            NSLog (@"error: [colourChooser selectedSegmentIndex] is out of range");
+            break;
+    }    
+}
+//===============================================================================
 @end
