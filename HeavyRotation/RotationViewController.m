@@ -32,4 +32,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)x
+{
+    // Return YES if incoming orientation is Portrait
+    //  or either of the Landscapes, otherwise return NO
+    return UIInterfaceOrientationIsPortrait(x) || UIInterfaceOrientationIsLandscape(x);
+}
+
 @end

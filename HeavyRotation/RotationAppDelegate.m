@@ -4,6 +4,7 @@
 
 
 #import "RotationAppDelegate.h"
+#import "RotationViewController.h"
 
 @implementation RotationAppDelegate
 
@@ -26,6 +27,9 @@
            selector:@selector(orientationChanged:)
                name:UIDeviceOrientationDidChangeNotification
              object:device];
+    
+    RotationViewController *hvc = [[RotationViewController alloc] init];
+    [[self window] setRootViewController:hvc];
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
