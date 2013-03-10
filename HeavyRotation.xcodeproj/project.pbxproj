@@ -16,8 +16,8 @@
 		CB56B30F16ECDCA4007698B5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB56B30E16ECDCA4007698B5 /* Default.png */; };
 		CB56B31116ECDCA4007698B5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31016ECDCA4007698B5 /* Default@2x.png */; };
 		CB56B31316ECDCA4007698B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31216ECDCA4007698B5 /* Default-568h@2x.png */; };
-		CB56B31C16ECE181007698B5 /* RotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB56B31A16ECE181007698B5 /* RotationViewController.m */; };
-		CB56B31D16ECE181007698B5 /* RotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31B16ECE181007698B5 /* RotationViewController.xib */; };
+		CB56B31C16ECE181007698B5 /* HeavyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB56B31A16ECE181007698B5 /* HeavyViewController.m */; };
+		CB56B31D16ECE181007698B5 /* HeavyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31B16ECE181007698B5 /* HeavyViewController.xib */; };
 		CB56B31F16ECE426007698B5 /* viewscope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31E16ECE426007698B5 /* viewscope.jpg */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +35,9 @@
 		CB56B30E16ECDCA4007698B5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB56B31016ECDCA4007698B5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CB56B31216ECDCA4007698B5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CB56B31916ECE181007698B5 /* RotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
-		CB56B31A16ECE181007698B5 /* RotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
-		CB56B31B16ECE181007698B5 /* RotationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RotationViewController.xib; sourceTree = "<group>"; };
+		CB56B31916ECE181007698B5 /* HeavyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeavyViewController.h; sourceTree = "<group>"; };
+		CB56B31A16ECE181007698B5 /* HeavyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeavyViewController.m; sourceTree = "<group>"; };
+		CB56B31B16ECE181007698B5 /* HeavyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeavyViewController.xib; sourceTree = "<group>"; };
 		CB56B31E16ECE426007698B5 /* viewscope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = viewscope.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,9 +87,9 @@
 			children = (
 				CB56B30B16ECDCA4007698B5 /* RotationAppDelegate.h */,
 				CB56B30C16ECDCA4007698B5 /* RotationAppDelegate.m */,
-				CB56B31916ECE181007698B5 /* RotationViewController.h */,
-				CB56B31A16ECE181007698B5 /* RotationViewController.m */,
-				CB56B31B16ECE181007698B5 /* RotationViewController.xib */,
+				CB56B31916ECE181007698B5 /* HeavyViewController.h */,
+				CB56B31A16ECE181007698B5 /* HeavyViewController.m */,
+				CB56B31B16ECE181007698B5 /* HeavyViewController.xib */,
 				CB56B30316ECDCA4007698B5 /* Supporting Files */,
 			);
 			path = HeavyRotation;
@@ -166,7 +166,7 @@
 				CB56B30F16ECDCA4007698B5 /* Default.png in Resources */,
 				CB56B31116ECDCA4007698B5 /* Default@2x.png in Resources */,
 				CB56B31316ECDCA4007698B5 /* Default-568h@2x.png in Resources */,
-				CB56B31D16ECE181007698B5 /* RotationViewController.xib in Resources */,
+				CB56B31D16ECE181007698B5 /* HeavyViewController.xib in Resources */,
 				CB56B31F16ECE426007698B5 /* viewscope.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,7 +180,7 @@
 			files = (
 				CB56B30916ECDCA4007698B5 /* main.m in Sources */,
 				CB56B30D16ECDCA4007698B5 /* RotationAppDelegate.m in Sources */,
-				CB56B31C16ECE181007698B5 /* RotationViewController.m in Sources */,
+				CB56B31C16ECE181007698B5 /* HeavyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 //
-//  RotationViewController.m
+//  HeavyViewController.m
 //  Created by aash on 2013-03-10.
 
 
-#import "RotationViewController.h"
+#import "HeavyViewController.h"
 
-@interface RotationViewController ()
+@interface HeavyViewController ()
 
 @end
 
-@implementation RotationViewController
+@implementation HeavyViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
