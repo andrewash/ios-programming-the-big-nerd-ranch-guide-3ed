@@ -52,13 +52,5 @@
     NSLog(@"TimeViewController loaded its view.");
 }
 
-// FYI - viewDidUnload note from iOS 6.x docs:
-//   "Deprecated in iOS 6.0. Views are no longer purged under low-memory conditions
-//   and so this method is never called.)"
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    NSLog(@"Unloading TimeViewController's subviews");
-    timeLabel = nil;
-}
+
 @end
