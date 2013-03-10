@@ -18,6 +18,7 @@
 		CB56B31316ECDCA4007698B5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31216ECDCA4007698B5 /* Default-568h@2x.png */; };
 		CB56B31C16ECE181007698B5 /* RotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB56B31A16ECE181007698B5 /* RotationViewController.m */; };
 		CB56B31D16ECE181007698B5 /* RotationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31B16ECE181007698B5 /* RotationViewController.xib */; };
+		CB56B31F16ECE426007698B5 /* viewscope.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB56B31E16ECE426007698B5 /* viewscope.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CB56B31916ECE181007698B5 /* RotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
 		CB56B31A16ECE181007698B5 /* RotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
 		CB56B31B16ECE181007698B5 /* RotationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RotationViewController.xib; sourceTree = "<group>"; };
+		CB56B31E16ECE426007698B5 /* viewscope.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = viewscope.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		CB56B30316ECDCA4007698B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CB56B31E16ECE426007698B5 /* viewscope.jpg */,
 				CB56B30416ECDCA4007698B5 /* HeavyRotation-Info.plist */,
 				CB56B30516ECDCA4007698B5 /* InfoPlist.strings */,
 				CB56B30816ECDCA4007698B5 /* main.m */,
@@ -164,6 +167,7 @@
 				CB56B31116ECDCA4007698B5 /* Default@2x.png in Resources */,
 				CB56B31316ECDCA4007698B5 /* Default-568h@2x.png in Resources */,
 				CB56B31D16ECE181007698B5 /* RotationViewController.xib in Resources */,
+				CB56B31F16ECE426007698B5 /* viewscope.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
