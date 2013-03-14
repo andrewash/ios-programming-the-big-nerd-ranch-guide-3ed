@@ -6,5 +6,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HeavyViewController : UIViewController
-
+{
+    IBOutlet UIButton* shiftingButton;
+    IBOutlet UIImageView* shiftingImage;
+}
 @end
