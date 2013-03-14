@@ -54,6 +54,12 @@ const float DISTANCE_TO_EDGE = 41.5;
     
     
     if(UIInterfaceOrientationIsLandscape(orientation)) {
+        // Image on the left
+        float xOrigin = [shiftingButton frame].origin.x;
+        float yOrigin = [shiftingImage frame].origin.y;
+        [shiftingImage setFrame:CGRectMake(xOrigin, yOrigin, [shiftingImage frame].size.width, [shiftingImage frame].size.height)];
+//        [shiftingImage setAutoresizingMask:(leftStrutOnly | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];
+        
         // Button on the right
         float yCenter = [shiftingButton center].y;
         float xCenter = [shiftingButton center].x;
@@ -68,6 +74,13 @@ const float DISTANCE_TO_EDGE = 41.5;
         xCenter = DISTANCE_TO_EDGE;
         [shiftingButton setAutoresizingMask:leftStrutOnly];
         [shiftingButton setCenter:CGPointMake(xCenter, yCenter)];
+        
+        // Image on the right (image's origin is as far as the button is from the edge, plus half a button's width)
+        float marginSize = DISTANCE_TO_EDGE - ([shiftingButton frame].size.width * 0.5);
+        float xOrigin = marginSize + [shiftingButton frame].size.width + marginSize;
+        float yOrigin = [shiftingImage frame].origin.y;
+        [shiftingImage setFrame:CGRectMake(xOrigin, yOrigin, [shiftingImage frame].size.width, [shiftingImage frame].size.height)];
+//        [shiftingImage setAutoresizingMask:(rightStrutOnly | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];
     }
     else {
         NSLog(@"Error: Unexpected orientation encountered");
