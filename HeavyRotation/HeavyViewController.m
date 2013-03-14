@@ -44,22 +44,38 @@ const float DISTANCE_TO_EDGE = 41.5;
     return UIInterfaceOrientationIsPortrait(x) || UIInterfaceOrientationIsLandscape(x);
 }
 
+
+// When app starts in landscape, correct the view
+// - this method adapted from http://goo.gl/HNyXw
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"viewWillAppear event triggered!");
+    [super viewWillAppear:animated];
+    [self updateLayoutForNewOrientation:[self interfaceOrientation]];
+}
+
+
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation
                                          duration:(NSTimeInterval)duration
+{
+    [self updateLayoutForNewOrientation:orientation];
+}
+
+
+// the idea of generalizing this code into its own function comes from http://goo.gl/HNyXw
+- (void)updateLayoutForNewOrientation:(UIInterfaceOrientation)orientation
 {
     CGRect viewBounds = [[self view] bounds];
     
     UIViewAutoresizing leftStrutOnly = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     UIViewAutoresizing rightStrutOnly = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     
-    
     if(UIInterfaceOrientationIsLandscape(orientation)) {
         // Image on the left
         float xOrigin = [shiftingButton frame].origin.x;
         float yOrigin = [shiftingImage frame].origin.y;
         [shiftingImage setFrame:CGRectMake(xOrigin, yOrigin, [shiftingImage frame].size.width, [shiftingImage frame].size.height)];
-//        [shiftingImage setAutoresizingMask:(leftStrutOnly | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];
-        
+
         // Button on the right
         float yCenter = [shiftingButton center].y;
         float xCenter = [shiftingButton center].x;
@@ -80,14 +96,9 @@ const float DISTANCE_TO_EDGE = 41.5;
         float xOrigin = marginSize + [shiftingButton frame].size.width + marginSize;
         float yOrigin = [shiftingImage frame].origin.y;
         [shiftingImage setFrame:CGRectMake(xOrigin, yOrigin, [shiftingImage frame].size.width, [shiftingImage frame].size.height)];
-//        [shiftingImage setAutoresizingMask:(rightStrutOnly | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth)];
     }
     else {
         NSLog(@"Error: Unexpected orientation encountered");
     }
-    
-    // Switch autoresizing strut from left-side to right-side of the shiftingButton
-//    [shiftingButton autoresizingMask]
 }
-
 @end
