@@ -3,6 +3,7 @@
 
 
 #import "HomepwnerAppDelegate.h"
+#import "ItemsViewController.h"
 
 @implementation HomepwnerAppDelegate
 
@@ -10,6 +11,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // Create a ItemsViewController
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
+    
+    // Place ItemViewController's table view in the view hierarchy
+    [[self window] setRootViewController:itemsViewController];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
