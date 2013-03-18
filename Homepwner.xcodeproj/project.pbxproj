@@ -16,6 +16,7 @@
 		CBE8C75616F7C4F700AE3BA8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C75516F7C4F700AE3BA8 /* Default.png */; };
 		CBE8C75816F7C4F700AE3BA8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C75716F7C4F700AE3BA8 /* Default@2x.png */; };
 		CBE8C75A16F7C4F700AE3BA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8C75916F7C4F700AE3BA8 /* Default-568h@2x.png */; };
+		CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		CBE8C75516F7C4F700AE3BA8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CBE8C75716F7C4F700AE3BA8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CBE8C75916F7C4F700AE3BA8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CBE8C76016F7CC7300AE3BA8 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
+		CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				CBE8C75216F7C4F700AE3BA8 /* HomepwnerAppDelegate.h */,
 				CBE8C75316F7C4F700AE3BA8 /* HomepwnerAppDelegate.m */,
 				CBE8C74A16F7C4F700AE3BA8 /* Supporting Files */,
+				CBE8C76016F7CC7300AE3BA8 /* ItemsViewController.h */,
+				CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			files = (
 				CBE8C75016F7C4F700AE3BA8 /* main.m in Sources */,
 				CBE8C75416F7C4F700AE3BA8 /* HomepwnerAppDelegate.m in Sources */,
+				CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
