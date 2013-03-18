@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB35825B16F7DC3F00E24837 /* BNRItem.m */; };
 		CBE8C74416F7C4F600AE3BA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */; };
 		CBE8C74616F7C4F600AE3BA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */; };
 		CBE8C74816F7C4F600AE3BA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74716F7C4F600AE3BA8 /* CoreGraphics.framework */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB35825A16F7DC3F00E24837 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
+		CB35825B16F7DC3F00E24837 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		CBE8C74016F7C4F600AE3BA8 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +84,8 @@
 		CBE8C74916F7C4F600AE3BA8 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				CB35825A16F7DC3F00E24837 /* BNRItem.h */,
+				CB35825B16F7DC3F00E24837 /* BNRItem.m */,
 				CBE8C75216F7C4F700AE3BA8 /* HomepwnerAppDelegate.h */,
 				CBE8C75316F7C4F700AE3BA8 /* HomepwnerAppDelegate.m */,
 				CBE8C74A16F7C4F700AE3BA8 /* Supporting Files */,
@@ -173,6 +178,7 @@
 				CBE8C75016F7C4F700AE3BA8 /* main.m in Sources */,
 				CBE8C75416F7C4F700AE3BA8 /* HomepwnerAppDelegate.m in Sources */,
 				CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */,
+				CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +293,7 @@
 				CBE8C75F16F7C4F700AE3BA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
