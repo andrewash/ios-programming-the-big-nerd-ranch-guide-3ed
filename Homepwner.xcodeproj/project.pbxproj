@@ -89,13 +89,13 @@
 			children = (
 				CB35825A16F7DC3F00E24837 /* BNRItem.h */,
 				CB35825B16F7DC3F00E24837 /* BNRItem.m */,
-				CBE8C75216F7C4F700AE3BA8 /* HomepwnerAppDelegate.h */,
-				CBE8C75316F7C4F700AE3BA8 /* HomepwnerAppDelegate.m */,
 				CB35825D16F7DD7400E24837 /* BNRItemStore.h */,
 				CB35825E16F7DD7400E24837 /* BNRItemStore.m */,
-				CBE8C74A16F7C4F700AE3BA8 /* Supporting Files */,
+				CBE8C75216F7C4F700AE3BA8 /* HomepwnerAppDelegate.h */,
+				CBE8C75316F7C4F700AE3BA8 /* HomepwnerAppDelegate.m */,
 				CBE8C76016F7CC7300AE3BA8 /* ItemsViewController.h */,
 				CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */,
+				CBE8C74A16F7C4F700AE3BA8 /* Supporting Files */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
