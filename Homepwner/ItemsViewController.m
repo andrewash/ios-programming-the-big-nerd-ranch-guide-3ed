@@ -34,7 +34,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [[self filterItemsForSection:section] count];
+    return [[ItemsViewController filterItemsForSection:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -50,14 +50,14 @@
     
     // Set {the text on the cell} with the {description of the item that is at the nth index of items},
     //      where n = {row this cell will appear in on the tableview }
-    NSArray *filteredItems = [self filterItemsForSection:[indexPath section]];
+    NSArray *filteredItems = [ItemsViewController filterItemsForSection:[indexPath section]];
     BNRItem *p = [filteredItems objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[p description]];
     return cell;
 }
 
 // I learned about NSPredicate from iOS Docs &&  http://goo.gl/k626r
-- (NSArray *)filterItemsForSection:(int)section {
++ (NSArray *)filterItemsForSection:(int)section {
     // Filter allItems to have only items for the requested section [elegant solution!]
     NSPredicate *predicate;
     if (section == 0) {         // section 0 === cheap items

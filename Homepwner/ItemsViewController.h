@@ -9,5 +9,5 @@
     
 }
 // Helper methods
-- (NSArray *)filterItemsForSection:(int)section;
++ (NSArray *)filterItemsForSection:(int)section;
 @end
