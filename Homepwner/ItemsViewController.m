@@ -56,6 +56,7 @@
     return cell;
 }
 
+// I learned about NSPredicate from iOS Docs &&  http://goo.gl/k626r
 - (NSArray *)filterItemsForSection:(int)section {
     // Filter allItems to have only items for the requested section [elegant solution!]
     NSPredicate *predicate;
