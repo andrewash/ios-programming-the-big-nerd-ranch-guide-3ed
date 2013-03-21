@@ -32,9 +32,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Create an instance of UITableViewCell, with default appearance
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                   reuseIdentifier:@"UITableViewCell"];
+    // Check for a reusable cell first, use that if it exists
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    
+    // If there is no reusable cell of this type, create a new one
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:@"UITableViewCell"];
+    }
     
     // Set {the text on the cell} with the {description of the item that is at the nth index of items},
     //      where n = {row this cell will appear in on the tableview }
