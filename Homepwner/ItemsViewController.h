@@ -5,5 +5,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ItemsViewController : UITableViewController
-
+{
+    
+}
+// Helper methods
+- (NSArray *)filterItemsForSection:(int)section;
 @end
