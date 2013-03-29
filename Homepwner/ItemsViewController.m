@@ -34,7 +34,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [[ItemsViewController filterItemsForSection:section] count];
+    int rows = [[ItemsViewController filterItemsForSection:section] count];
+    if (section == 1)   // Ch. 10, SILVER challenge ("last row has the text 'No more items!'")
+        return rows+1;
+    else
+        return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -51,8 +55,17 @@
     // Set {the text on the cell} with the {description of the item that is at the nth index of items},
     //      where n = {row this cell will appear in on the tableview }
     NSArray *filteredItems = [ItemsViewController filterItemsForSection:[indexPath section]];
-    BNRItem *p = [filteredItems objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[p description]];
+    
+    // Ch. 10, SILVER challenge
+    int rowToDisplay = [indexPath row] + 1;  // "+ 1" because indexPath is 0-based, but [NSArray count] is 1-based
+    int lastRowInDataStore = [[ItemsViewController filterItemsForSection:[indexPath section]] count];
+    if (rowToDisplay > lastRowInDataStore) {
+        [[cell textLabel] setText:@"No more items!"];
+    }
+    else {
+        BNRItem *p = [filteredItems objectAtIndex:[indexPath row]];
+        [[cell textLabel] setText:[p description]];
+    }
     return cell;
 }
 
