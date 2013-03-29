@@ -25,7 +25,6 @@
     return [self init];
 }
 
-
 //== Ch. 9, BRONZE CHALLENGE (finished in 50mins) ==
 // Tells the UITableView how many sections there are (2)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -35,7 +34,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     int rows = [[ItemsViewController filterItemsForSection:section] count];
-    if (section == 1)   // Ch. 10, SILVER challenge ("last row has the text 'No more items!'")
+    if (section == 1)   // Ch. 9, SILVER challenge ("last row has the text 'No more items!'")
         return rows+1;
     else
         return rows;
@@ -56,7 +55,7 @@
     //      where n = {row this cell will appear in on the tableview }
     NSArray *filteredItems = [ItemsViewController filterItemsForSection:[indexPath section]];
     
-    // Ch. 10, SILVER challenge
+    // Ch. 9, SILVER challenge
     int rowToDisplay = [indexPath row] + 1;  // "+ 1" because indexPath is 0-based, but [NSArray count] is 1-based
     int lastRowInDataStore = [[ItemsViewController filterItemsForSection:[indexPath section]] count];
     if (rowToDisplay > lastRowInDataStore) {
