@@ -10,4 +10,5 @@
 }
 // Helper methods
 + (NSArray *)filterItemsForSection:(int)section;
+- (bool)isIndexPathInDataStore:(NSIndexPath *)indexPath;
 @end

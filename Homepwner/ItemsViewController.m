@@ -56,16 +56,24 @@
     NSArray *filteredItems = [ItemsViewController filterItemsForSection:[indexPath section]];
     
     // Ch. 9, SILVER challenge
-    int rowToDisplay = [indexPath row] + 1;  // "+ 1" because indexPath is 0-based, but [NSArray count] is 1-based
-    int lastRowInDataStore = [[ItemsViewController filterItemsForSection:[indexPath section]] count];
-    if (rowToDisplay > lastRowInDataStore) {
-        [[cell textLabel] setText:@"No more items!"];
-    }
-    else {
+    if ([self isIndexPathInDataStore:indexPath]) {
         BNRItem *p = [filteredItems objectAtIndex:[indexPath row]];
         [[cell textLabel] setText:[p description]];
     }
+    else {
+        [[cell textLabel] setText:@"No more items!"];
+    }
     return cell;
+}
+
+// Ch. 9, GOLD challenge -- refactored code from silver challenge into this helper method
+- (bool)isIndexPathInDataStore:(NSIndexPath *)indexPath {
+    int rowToDisplay = [indexPath row] + 1;  // "+ 1" because indexPath is 0-based, but [NSArray count] is 1-based
+    int lastRowInDataStore = [[ItemsViewController filterItemsForSection:[indexPath section]] count];
+    if (rowToDisplay <= lastRowInDataStore)
+        return true;
+    else
+        return false;
 }
 
 // I learned about NSPredicate from iOS Docs &&  http://goo.gl/k626r
