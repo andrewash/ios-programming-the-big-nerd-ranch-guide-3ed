@@ -66,6 +66,19 @@
     return cell;
 }
 
+// Ch. 9, GOLD challenge
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self isIndexPathInDataStore:indexPath])
+        return 60;
+    else
+        return 44;
+}
+
+
+//========================
+//==== HELPER METHODS ====
+//------------------------
 // Ch. 9, GOLD challenge -- refactored code from silver challenge into this helper method
 - (bool)isIndexPathInDataStore:(NSIndexPath *)indexPath {
     int rowToDisplay = [indexPath row] + 1;  // "+ 1" because indexPath is 0-based, but [NSArray count] is 1-based
