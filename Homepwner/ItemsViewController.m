@@ -6,6 +6,12 @@
 #import "BNRItemStore.h"
 #import "BNRItem.h"
 
+//==Ch. 9, GOLD challenge
+// fix for iPhone 5+
+// source http://stackoverflow.com/questions/9063100/xcode-ios-how-to-determine-whether-code-is-running-in-debug-release-build
+#define isPhone568 ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568)
+#define iPhone568ImageNamed(image) (isPhone568 ? [NSString stringWithFormat:@"%@-568h.%@", [image stringByDeletingPathExtension], [image pathExtension]] : image)
+#define iPhone568Image(image) ([UIImage imageNamed:iPhone568ImageNamed(image)])
 
 @implementation ItemsViewController
 
@@ -23,6 +29,19 @@
 // ensures all instances of ItemsViewController have "group" styling.
 - (id)initWithStyle:(UITableViewStyle)style {
     return [self init];
+}
+
+//== Ch. 9, GOLD challenge
+- (void)viewDidLoad {
+    // Always call the super implementation of viewDidLoad
+    [super viewDidLoad];
+    NSLog(@"ItemsViewController loaded its view.");
+
+    // FYI - background image obtained for non-commercial purposes
+        // source: http://3.bp.blogspot.com/-wVbOcUcUP58/UFHQBu3BneI/AAAAAAAAKt4/HG1mY0qcpPM/s1600/artistic-abstract-95.jpg
+    UIImageView *backgroundImage = [[UIImageView alloc]
+                                    initWithImage:[UIImage imageNamed:iPhone568ImageNamed(@"wallpaper.jpg")]];
+    [[[self tableView] backgroundView] addSubview:backgroundImage];
 }
 
 //== Ch. 9, BRONZE CHALLENGE (finished in 50mins) ==
@@ -58,6 +77,12 @@
     // Ch. 9, SILVER challenge
     if ([self isIndexPathInDataStore:indexPath]) {
         BNRItem *p = [filteredItems objectAtIndex:[indexPath row]];
+        // ---------------------
+        // Ch. 9, GOLD challenge
+        //   we change font size by updating the cell's UILabel's UIFont property
+        UIFont *defaultFont = [[cell textLabel] font];
+        [[cell textLabel] setFont:[defaultFont fontWithSize:20]];
+        // ---------------------
         [[cell textLabel] setText:[p description]];
     }
     else {
