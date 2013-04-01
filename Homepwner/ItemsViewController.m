@@ -100,6 +100,32 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 44;
 }
 
+// == Header ==
+- (UIView *)headerView {
+    // check to see if it is loaded
+    if (!headerView) {
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+    }
+    return headerView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (section == 0)       // only show header view atop the first section (not every section!)
+        return [self headerView];
+    else
+        return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    // The height of the header view should be determined from the height of
+    //  the view in the XIB file
+    if (section == 0)
+        return [[self headerView] bounds].size.height;
+    else
+        return 0;
+        // FYI: Prior to iOS 5.0, table views would automatically resize the heights of headers to 0 for sections tableView:viewForHeaderInSection: returned a nil view. In iOS 5.0 and later, you must return the actual height for each section header in this method. (iOS SDK docs)
+}
+
 
 //========================
 //==== HELPER METHODS ====
