@@ -126,6 +126,23 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         // FYI: Prior to iOS 5.0, table views would automatically resize the heights of headers to 0 for sections tableView:viewForHeaderInSection: returned a nil view. In iOS 5.0 and later, you must return the actual height for each section header in this method. (iOS SDK docs)
 }
 
+- (IBAction)toggleEditingMode:(id)sender {
+    // If we are currently in editing mode
+    if ([self isEditing]) {
+        // Change text of button to inform user of state
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        // Turn off editing mode
+        [self setEditing:NO animated:YES];
+    }
+    else {
+        // Change text of button to inform user of state
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        // Enter editing mode
+        [self setEditing:YES animated:YES];
+        [sender setHighlighted:YES];
+    }
+}
+
 
 //========================
 //==== HELPER METHODS ====
