@@ -156,6 +156,20 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                             withRowAnimation:UITableViewRowAnimationTop];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+                                            forRowAtIndexPath:(NSIndexPath *)indexPath {
+    // If the table view is asking to commit a delete command...
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        BNRItemStore *ps = [BNRItemStore sharedStore];
+        BNRItem *p = [ItemsViewController itemAtIndexPath:indexPath];
+        [ps removeItem:p];
+        
+        // We also remove that row from the table view with an animation
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 
 //========================
 //==== HELPER METHODS ====
@@ -192,6 +206,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [NSIndexPath indexPathForRow:rowIndex inSection:secIndex];
 }
 
++ (BNRItem *)itemAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *sectionItems = [ItemsViewController filterItemsForSection:[indexPath section]];
+    return [sectionItems objectAtIndex:[indexPath row]];
+}
+
+
 // I learned about NSPredicate from iOS Docs &&  http://goo.gl/k626r
 + (NSArray *)filterItemsForSection:(int)section {
     // Filter allItems to have only items for the requested section [elegant solution!]
@@ -210,6 +230,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *filteredItems = [allItems filteredArrayUsingPredicate:predicate];
     return filteredItems;
 }
+
 //== end of BRONZE CHALLENGE ==
 
 @end

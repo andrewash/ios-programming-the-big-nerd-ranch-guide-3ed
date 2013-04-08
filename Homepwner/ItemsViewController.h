@@ -16,6 +16,7 @@
 
 // Helper methods
 + (NSIndexPath *)indexPathForBNRItem:(BNRItem *)item;
++ (BNRItem *)itemAtIndexPath:(NSIndexPath *)indexPath;
 + (NSArray *)filterItemsForSection:(int)section;
 - (bool)isIndexPathInDataStore:(NSIndexPath *)indexPath;
 @end
