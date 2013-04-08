@@ -170,11 +170,23 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+// Update the data source to respond to a move (the move has already happened in the view
+//   FYI: BNRItemStore stores items in the order they were created.
+//        The book's solution of using [indexPath row] to reference the item being moved won't work for us
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
                                                   toIndexPath:(NSIndexPath *)destinationIndexPath {
-    // allItems stores items in the order they were created (NOT sorted by value)
-    [[BNRItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row]
-                                        toIndex:[destinationIndexPath row]];
+    if ([sourceIndexPath section] != [destinationIndexPath section])
+        NSLog(@"Error: moving an item from one section, to another section, is not supported.");
+    
+    BNRItem *itemAtSource = [ItemsViewController itemAtIndexPath:sourceIndexPath];
+    BNRItem *itemCurrentlyAtDestination = [ItemsViewController itemAtIndexPath:destinationIndexPath];
+    
+    int allItemsSourceIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemAtSource];
+    int allItemsDestinationIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemCurrentlyAtDestination];
+    
+    [[BNRItemStore sharedStore] moveItemAtIndex:allItemsSourceIndex
+                                        toIndex:allItemsDestinationIndex];
+    
 }
 
 
