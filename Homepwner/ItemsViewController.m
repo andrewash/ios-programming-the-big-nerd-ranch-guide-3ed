@@ -143,6 +143,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (IBAction)addNewItem:(id)sender {
+    // Make a new index path for the 0th section, last row
+    int lastRow = [[self tableView] numberOfRowsInSection:0];
+    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    // Insert this new row into the table.
+    [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip]
+                            withRowAnimation:UITableViewRowAnimationTop];
+}
+
 
 //========================
 //==== HELPER METHODS ====
