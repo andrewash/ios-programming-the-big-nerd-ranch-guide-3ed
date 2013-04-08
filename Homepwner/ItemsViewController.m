@@ -170,6 +170,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+                                                  toIndexPath:(NSIndexPath *)destinationIndexPath {
+    // allItems stores items in the order they were created (NOT sorted by value)
+    [[BNRItemStore sharedStore] moveItemAtIndex:[sourceIndexPath row]
+                                        toIndex:[destinationIndexPath row]];
+}
+
 
 //========================
 //==== HELPER METHODS ====
