@@ -144,10 +144,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (IBAction)addNewItem:(id)sender {
-    // Make a new index path for the 0th section, last row
-    int lastRow = [[self tableView] numberOfRowsInSection:0];
-    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    // Add an item to the BNRItemStore (which creates a new random item)
+    BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
     
+//    int lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
+//    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    // Figure out where that item is in the array
+
+    NSIndexPath *ip = [ItemsViewController indexPathForBNRItem:newItem];
     // Insert this new row into the table.
     [[self tableView] insertRowsAtIndexPaths:[NSArray arrayWithObject:ip]
                             withRowAnimation:UITableViewRowAnimationTop];
@@ -165,6 +170,28 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return true;
     else
         return false;
+}
+
++ (NSIndexPath *)indexPathForBNRItem:(BNRItem *)item {
+    int rowIndex = NSNotFound;
+    int secIndex = NSNotFound;
+
+    // look for this item in first section
+    rowIndex = [[ItemsViewController filterItemsForSection:0] indexOfObject:item];
+    if (rowIndex != NSNotFound) {
+        secIndex = 0;
+    }
+    else {
+        // look for item in the second section, if not found in first section
+        rowIndex = [[ItemsViewController filterItemsForSection:1] indexOfObject:item];
+        if (rowIndex != NSNotFound) {
+            secIndex = 1;
+        }
+        else {
+            NSLog(@"Error: requested item not found in BNRItemStore");
+        }
+    }
+    return [NSIndexPath indexPathForRow:rowIndex inSection:secIndex];
 }
 
 // I learned about NSPredicate from iOS Docs &&  http://goo.gl/k626r

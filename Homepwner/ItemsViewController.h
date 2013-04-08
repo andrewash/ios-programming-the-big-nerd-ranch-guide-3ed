@@ -3,6 +3,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "BNRItem.h"
 
 @interface ItemsViewController : UITableViewController
 {
@@ -14,6 +15,7 @@
 - (IBAction)toggleEditingMode:(id)sender;
 
 // Helper methods
++ (NSIndexPath *)indexPathForBNRItem:(BNRItem *)item;
 + (NSArray *)filterItemsForSection:(int)section;
 - (bool)isIndexPathInDataStore:(NSIndexPath *)indexPath;
 @end
