@@ -175,20 +175,76 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 //        The book's solution of using [indexPath row] to reference the item being moved won't work for us
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
                                                   toIndexPath:(NSIndexPath *)destinationIndexPath {
-    if ([sourceIndexPath section] != [destinationIndexPath section])
-        NSLog(@"Error: moving an item from one section, to another section, is not supported.");
-    
-    BNRItem *itemAtSource = [ItemsViewController itemAtIndexPath:sourceIndexPath];
-    BNRItem *itemCurrentlyAtDestination = [ItemsViewController itemAtIndexPath:destinationIndexPath];
-    
-    int allItemsSourceIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemAtSource];
-    int allItemsDestinationIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemCurrentlyAtDestination];
-    
-    [[BNRItemStore sharedStore] moveItemAtIndex:allItemsSourceIndex
-                                        toIndex:allItemsDestinationIndex];
-    
+
+    if ([self isIndexPathInDataStore:sourceIndexPath] == NO)
+    {
+        // moving a pseudo-item doesn't affect the data store at all
+        return;
+    }
+    else
+    {
+        if ([sourceIndexPath section] != [destinationIndexPath section])
+            NSLog(@"Error: moving an item from one section, to another section, is not supported.");
+        
+        BNRItem *itemAtSource = [ItemsViewController itemAtIndexPath:sourceIndexPath];
+        BNRItem *itemCurrentlyAtDestination = [ItemsViewController itemAtIndexPath:destinationIndexPath];
+        
+        int allItemsSourceIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemAtSource];
+        int allItemsDestinationIndex = [[[BNRItemStore sharedStore] allItems] indexOfObjectIdenticalTo:itemCurrentlyAtDestination];
+        
+        [[BNRItemStore sharedStore] moveItemAtIndex:allItemsSourceIndex
+                                            toIndex:allItemsDestinationIndex];
+    }
 }
 
+
+// restricts rows to relocation within their own section, and prevents moves to any other section
+- (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+                                                                         toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
+    int proposedDestinationRow;
+    int proposedDestinationSection = [sourceIndexPath section];
+
+    // reject moving any pseudo-item (ex. the "No more items" row)
+    if ([self isIndexPathInDataStore:sourceIndexPath] == NO) {
+        return sourceIndexPath;
+    }
+        
+    // reject moving an item to any section beyond its own
+    //   propose this instead: the last/first row of the source item's section
+    if ([sourceIndexPath section] != [proposedDestinationIndexPath section]) {
+        if ([sourceIndexPath section] == 0)
+        {
+            proposedDestinationRow = [self tableView:tableView numberOfRowsInSection:proposedDestinationSection] - 1;  // row's are 0-based
+        }
+        else if ([sourceIndexPath section] == 1)
+        {
+            proposedDestinationRow = 0;
+        }
+        else
+        {
+            proposedDestinationRow = [sourceIndexPath row];
+            NSLog(@"Error: didn't expect more than two sections. Was asked to move an item from section %d", proposedDestinationSection);
+        }
+        
+        return [NSIndexPath indexPathForRow:proposedDestinationRow inSection:proposedDestinationSection];
+    }
+    
+    // reject moving anything to the "No more items" row
+    if ([self isIndexPathInDataStore:proposedDestinationIndexPath] == NO) {
+        proposedDestinationRow = [proposedDestinationIndexPath row] - 1;
+        // check if this item was being moved between sections
+        if ([sourceIndexPath section] != [proposedDestinationIndexPath section])
+            proposedDestinationSection = [sourceIndexPath section];
+        else
+            proposedDestinationSection = [proposedDestinationIndexPath section];
+        return [NSIndexPath indexPathForRow:proposedDestinationRow inSection:proposedDestinationSection];
+    }
+
+    
+    // OTHERWISE, if we've passed every other check...
+    // return the proposed destination as-is, b/c it's approved
+    return proposedDestinationIndexPath;
+}
 
 //========================
 //==== HELPER METHODS ====
