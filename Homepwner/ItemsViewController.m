@@ -243,6 +243,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return [NSIndexPath indexPathForRow:proposedDestinationRow inSection:proposedDestinationSection];
     }
     
+    // Ch. 10, Gold Challenge: Really Preventing Reordering
     // reject moving anything to the "No more items" row
     if ([self isIndexPathInDataStore:proposedDestinationIndexPath] == NO) {
         proposedDestinationRow = [proposedDestinationIndexPath row] - 1;
