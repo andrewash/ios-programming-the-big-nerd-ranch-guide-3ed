@@ -211,7 +211,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-
+// Ch. 10, Silver Challenge: Preventing Reordering
 // restricts rows to relocation within their own section, and prevents moves to any other section
 - (NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
                                                                          toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
