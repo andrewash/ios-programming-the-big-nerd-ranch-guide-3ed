@@ -161,6 +161,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 // DELETE METHODS
 // ------------------
+// Ch. 10, Bronze Challenge: "Renaming the Delete button"
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remove";
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                             forRowAtIndexPath:(NSIndexPath *)indexPath {
     // If the table view is asking to commit a delete command...
