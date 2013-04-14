@@ -12,6 +12,8 @@
 		CB1AE2A2170537BB0063456D /* wallpaper-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB1AE29F170537BB0063456D /* wallpaper-568h@2x.jpg */; };
 		CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB35825B16F7DC3F00E24837 /* BNRItem.m */; };
 		CB35825F16F7DD7400E24837 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB35825E16F7DD7400E24837 /* BNRItemStore.m */; };
+		CB3AC9A1171B2BD40099620B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3AC99F171B2BD40099620B /* DetailViewController.m */; };
+		CB3AC9A2171B2BD40099620B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3AC9A0171B2BD40099620B /* DetailViewController.xib */; };
 		CB7D3E63170A46FE0078D70D /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7D3E62170A46FE0078D70D /* HeaderView.xib */; };
 		CBE8C74416F7C4F600AE3BA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */; };
 		CBE8C74616F7C4F600AE3BA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */; };
@@ -33,6 +35,9 @@
 		CB35825B16F7DC3F00E24837 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		CB35825D16F7DD7400E24837 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		CB35825E16F7DD7400E24837 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
+		CB3AC99E171B2BD40099620B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CB3AC99F171B2BD40099620B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		CB3AC9A0171B2BD40099620B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		CB7D3E62170A46FE0078D70D /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		CBE8C74016F7C4F600AE3BA8 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +106,9 @@
 				CB35825E16F7DD7400E24837 /* BNRItemStore.m */,
 				CBE8C75216F7C4F700AE3BA8 /* HomepwnerAppDelegate.h */,
 				CBE8C75316F7C4F700AE3BA8 /* HomepwnerAppDelegate.m */,
+				CB3AC99E171B2BD40099620B /* DetailViewController.h */,
+				CB3AC99F171B2BD40099620B /* DetailViewController.m */,
+				CB3AC9A0171B2BD40099620B /* DetailViewController.xib */,
 				CBE8C76016F7CC7300AE3BA8 /* ItemsViewController.h */,
 				CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */,
 				CB7D3E62170A46FE0078D70D /* HeaderView.xib */,
@@ -186,6 +194,7 @@
 				CB1AE2A1170537BB0063456D /* wallpaper@2x.jpg in Resources */,
 				CB1AE2A2170537BB0063456D /* wallpaper-568h@2x.jpg in Resources */,
 				CB7D3E63170A46FE0078D70D /* HeaderView.xib in Resources */,
+				CB3AC9A2171B2BD40099620B /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +210,7 @@
 				CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */,
 				CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */,
 				CB35825F16F7DD7400E24837 /* BNRItemStore.m in Sources */,
+				CB3AC9A1171B2BD40099620B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
