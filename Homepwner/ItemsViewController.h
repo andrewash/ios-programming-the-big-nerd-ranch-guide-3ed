@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BNRItem.h"
+#import "DetailViewController.h"
 
 @interface ItemsViewController : UITableViewController
 {

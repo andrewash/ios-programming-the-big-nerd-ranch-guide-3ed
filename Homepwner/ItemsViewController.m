@@ -262,6 +262,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 
+// DETAIL VIEW METHODS
+// -------------------
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    
+    // Push it onto the top of the navigation controller's stack
+    [[self navigationController] pushViewController:detailViewController animated:YES];
+}
+
+
 //========================
 //==== HELPER METHODS ====
 //------------------------
