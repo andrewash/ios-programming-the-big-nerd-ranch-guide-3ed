@@ -266,7 +266,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 // -------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailViewController *detailViewController = [[DetailViewController alloc] init];
+
+    BNRItem *selectedItem = [ItemsViewController itemAtIndexPath:indexPath];
     
+    // Give detail view controller a pointer to the item object rep. by this row
+    [detailViewController setItem:selectedItem];
+
     // Push it onto the top of the navigation controller's stack
     [[self navigationController] pushViewController:detailViewController animated:YES];
 }
