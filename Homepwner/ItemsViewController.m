@@ -48,6 +48,8 @@
     return 2;
 }
 
+// GLOBAL STRUCTURE & FORMATTING
+// -----------------------------
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     int rows = [[ItemsViewController filterItemsForSection:section] count];
@@ -98,7 +100,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 44;
 }
 
-// == Header ==
 - (UIView *)headerView {
     // check to see if it is loaded
     if (!headerView) {
@@ -141,6 +142,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+// NEW ITEM METHODS
+// ----------------
 - (IBAction)addNewItem:(id)sender {
     // Add an item to the BNRItemStore (which creates a new random item)
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
@@ -156,6 +159,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                             withRowAnimation:UITableViewRowAnimationTop];
 }
 
+// DELETE METHODS
+// ------------------
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
                                             forRowAtIndexPath:(NSIndexPath *)indexPath {
     // If the table view is asking to commit a delete command...
@@ -169,6 +174,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                          withRowAnimation:UITableViewRowAnimationFade];
     }
 }
+
+
+// REORDERING METHODS
+// ------------------
 
 // Update the data source to respond to a move (the move has already happened in the view
 //   FYI: BNRItemStore stores items in the order they were created.
@@ -245,6 +254,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // return the proposed destination as-is, b/c it's approved
     return proposedDestinationIndexPath;
 }
+
 
 //========================
 //==== HELPER METHODS ====
