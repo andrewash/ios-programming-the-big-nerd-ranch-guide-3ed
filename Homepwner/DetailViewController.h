@@ -6,7 +6,7 @@
 
 @class BNRItem;
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
 {
     __weak IBOutlet UITextField *nameField;
     __weak IBOutlet UITextField *serialNumberField;
@@ -14,4 +14,7 @@
     __weak IBOutlet UILabel *dateLabel;
 }
 @property (nonatomic, strong) BNRItem *item;
+
+- (void)showDoneButtonInToolbar;
+
 @end

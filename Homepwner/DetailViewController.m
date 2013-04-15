@@ -16,6 +16,16 @@
 
 @synthesize item;
 
+// Ch. 11, SILVER CHALLENGE
+- (id)init {
+    // Call the superclass's designated initializer
+    self = [super init];
+    if (self) {
+        [self showDoneButtonInToolbar];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"DetailViewController loaded its view.");
@@ -63,6 +73,38 @@
 - (void)setItem:(BNRItem *)i {
     item = i;
     [[self navigationItem] setTitle:[item itemName]];
+}
+
+// Ch. 11, SILVER CHALLENGE
+// Users see "Save" in the navbar while a field is being edited (instead of "Done")
+//   "target-action" pattern => tapping "Save" will dismiss the keyboard
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidBeginEditing event for field with value %@", [textField text]);
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:textField action:@selector(resignFirstResponder)];
+    
+    // Set this bar button item as the right item int he navigationItem
+    [[self navigationItem] setRightBarButtonItem:bbi];
+}
+
+// Ch. 11, SILVER CHALLENGE
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidEndEditing event for field with value %@", [textField text]);
+    [self showDoneButtonInToolbar];
+}
+
+// Ch. 11, SILVER CHALLENGE
+- (void)showDoneButtonInToolbar {
+    // Users see "Done" button in navbar, whenever a field isn't being edited. Tapping this button saves changes & pops DetailViewController from the NavigationController stack
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:[self navigationController] action:@selector(popViewControllerAnimated:)];
+    
+    // Set this bar button item as the right item int he navigationItem
+    [[self navigationItem] setRightBarButtonItem:bbi];
+}
+
+// When user taps the "return" key, while editing any textField, dismiss the keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
