@@ -42,6 +42,13 @@
     [[[self tableView] backgroundView] addSubview:backgroundImage];
 }
 
+// When returning from the Detail View, reload the table, in case one of the items has changed
+    // note: sounds inefficient, but that's how the book does it.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+}
+
 //== Ch. 9, BRONZE CHALLENGE (finished in 50mins) ==
 // Tells the UITableView how many sections there are (2)
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
