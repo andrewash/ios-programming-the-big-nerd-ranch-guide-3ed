@@ -8,12 +8,16 @@
 
 @interface ItemsViewController : UITableViewController
 {
-    IBOutlet UIView *headerView;
+//    IBOutlet UIView *headerView;  // for manual-style-header
 }
 
-- (UIView *)headerView;
+
 - (IBAction)addNewItem:(id)sender;
-- (IBAction)toggleEditingMode:(id)sender;
+
+// <MANUAL-STYLE-HEADER>
+//- (UIView *)headerView;
+//- (IBAction)toggleEditingMode:(id)sender;
+// </MANUAL-STYLE-HEADER>
 
 // Helper methods
 + (NSIndexPath *)indexPathForBNRItem:(BNRItem *)item;

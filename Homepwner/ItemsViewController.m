@@ -19,7 +19,16 @@
     // Call the superclass's designated initializer
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
-
+        UINavigationItem *n = [self navigationItem];
+        [n setTitle:@"Homepwner"];
+        
+        // Create a new bar button item that will send
+        // addNewItem: to ItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        
+        // Set this bar button item as the right item int he navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
@@ -107,47 +116,52 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 44;
 }
 
-- (UIView *)headerView {
-    // check to see if it is loaded
-    if (!headerView) {
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
-    }
-    return headerView;
-}
+// <MANUAL-STYLE-HEADER>    >>> We're using UINavigationBar and UINavigationItem instead
+//                              FYI - I'm retaining this code (commented out), so I can easily remember that it's there in source code repo,
+//                                    in case I want to use some of the same techniques later on
+//- (UIView *)headerView {
+//    // check to see if it is loaded
+//    if (!headerView) {
+//        [[NSBundle mainBundle] loadNibNamed:@"HeaderView" owner:self options:nil];
+//    }
+//    return headerView;
+//}
+//
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    if (section == 0)       // only show header view atop the first section (not every section!)
+//        return [self headerView];
+//    else
+//        return nil;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    // The height of the header view should be determined from the height of
+//    //  the view in the XIB file
+//    if (section == 0)
+//        return [[self headerView] bounds].size.height;
+//    else
+//        return 0;
+//        // FYI: Prior to iOS 5.0, table views would automatically resize the heights of headers to 0 for sections tableView:viewForHeaderInSection: returned a nil view. In iOS 5.0 and later, you must return the actual height for each section header in this method. (iOS SDK docs)
+//}
+//
+//- (IBAction)toggleEditingMode:(id)sender {
+//    // If we are currently in editing mode
+//    if ([self isEditing]) {
+//        // Change text of button to inform user of state
+//        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+//        // Turn off editing mode
+//        [self setEditing:NO animated:YES];
+//    }
+//    else {
+//        // Change text of button to inform user of state
+//        [sender setTitle:@"Done" forState:UIControlStateNormal];
+//        // Enter editing mode
+//        [self setEditing:YES animated:YES];
+//        [sender setHighlighted:YES];
+//    }
+//}
+// </MANUAL-STYLE-HEADER>
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 0)       // only show header view atop the first section (not every section!)
-        return [self headerView];
-    else
-        return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    // The height of the header view should be determined from the height of
-    //  the view in the XIB file
-    if (section == 0)
-        return [[self headerView] bounds].size.height;
-    else
-        return 0;
-        // FYI: Prior to iOS 5.0, table views would automatically resize the heights of headers to 0 for sections tableView:viewForHeaderInSection: returned a nil view. In iOS 5.0 and later, you must return the actual height for each section header in this method. (iOS SDK docs)
-}
-
-- (IBAction)toggleEditingMode:(id)sender {
-    // If we are currently in editing mode
-    if ([self isEditing]) {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-    }
-    else {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        // Enter editing mode
-        [self setEditing:YES animated:YES];
-        [sender setHighlighted:YES];
-    }
-}
 
 // NEW ITEM METHODS
 // ----------------
