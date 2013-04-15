@@ -12,9 +12,10 @@
     __weak IBOutlet UITextField *serialNumberField;
     __weak IBOutlet UITextField *valueField;
     __weak IBOutlet UILabel *dateLabel;
+    __weak IBOutlet UIButton *changeDateButton;
 }
 @property (nonatomic, strong) BNRItem *item;
 
 - (void)showDoneButtonInToolbar;
-
+- (IBAction)changeDateCreated:(id)sender;
 @end
