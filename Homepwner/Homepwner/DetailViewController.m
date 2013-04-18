@@ -4,6 +4,7 @@
 
 #import "DetailViewController.h"
 #import "BNRItem.h"
+#import "DateCreatedViewController.h"
 
 // fix for iPhone 5+
 // source http://stackoverflow.com/questions/9063100/xcode-ios-how-to-determine-whether-code-is-running-in-debug-release-build
@@ -41,6 +42,7 @@
 }
 
 // Show properties of (BNRItem *)item
+//   Ch. 11, Gold Challenge - this should automatically refresh the view, after DateCreated has changed
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -111,6 +113,10 @@
 // Ch. 11, GOLD CHALLENGE
 - (IBAction)changeDateCreated:(id)sender {
     DateCreatedViewController *dateCreatedViewController = [[DateCreatedViewController alloc] init];
+
+    // pass pointer to the item being edited (and *not* the NSDate itself, which won't work)
+    [dateCreatedViewController setChangeDateCreatedOnThisItem:item];
+
     [[self navigationController] pushViewController:dateCreatedViewController animated:YES];
 }
 @end
