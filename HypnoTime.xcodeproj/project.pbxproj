@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB22C7BA16E3EB6200C76DA8 /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */; };
 		CB526D3716E3E9AB0002010D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3616E3E9AB0002010D /* UIKit.framework */; };
 		CB526D3916E3E9AB0002010D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3816E3E9AB0002010D /* Foundation.framework */; };
 		CB526D3B16E3E9AB0002010D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB526D3A16E3E9AB0002010D /* CoreGraphics.framework */; };
@@ -17,18 +16,17 @@
 		CB526D4916E3E9AB0002010D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4816E3E9AB0002010D /* Default.png */; };
 		CB526D4B16E3E9AB0002010D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4A16E3E9AB0002010D /* Default@2x.png */; };
 		CB526D4D16E3E9AB0002010D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB526D4C16E3E9AB0002010D /* Default-568h@2x.png */; };
-		CBB09DF716E55D1900E1B742 /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF316E55D1900E1B742 /* Hypno.png */; };
-		CBB09DF816E55D1900E1B742 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF416E55D1900E1B742 /* Hypno@2x.png */; };
-		CBB09DF916E55D1900E1B742 /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF516E55D1900E1B742 /* Time.png */; };
-		CBB09DFA16E55D1900E1B742 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBB09DF616E55D1900E1B742 /* Time@2x.png */; };
-		CBD95EEC16E3EE3E006627F1 /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */; };
+		CB65CE2F17203FDA005A177E /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE2D17203FDA005A177E /* Hypno.png */; };
+		CB65CE3017203FDA005A177E /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE2E17203FDA005A177E /* Hypno@2x.png */; };
+		CB65CE3317203FE7005A177E /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3117203FE7005A177E /* Time.png */; };
+		CB65CE3417203FE7005A177E /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB65CE3217203FE7005A177E /* Time@2x.png */; };
+		CB65CE3D1720400F005A177E /* HypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE3A1720400F005A177E /* HypnosisView.m */; };
+		CB65CE3E1720400F005A177E /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE3C1720400F005A177E /* HypnosisViewController.m */; };
 		CBD95EF216E3F37B006627F1 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EF116E3F37B006627F1 /* TimeViewController.m */; };
 		CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD95EF316E3F4E1006627F1 /* TimeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HypnosisViewController.h; path = ../HypnosisViewController.h; sourceTree = "<group>"; };
-		CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HypnosisViewController.m; path = ../HypnosisViewController.m; sourceTree = "<group>"; };
 		CB526D3316E3E9AB0002010D /* HypnoTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB526D3616E3E9AB0002010D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CB526D3816E3E9AB0002010D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,12 +40,14 @@
 		CB526D4816E3E9AB0002010D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB526D4A16E3E9AB0002010D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CB526D4C16E3E9AB0002010D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CBB09DF316E55D1900E1B742 /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Hypno.png; path = ../Hypno.png; sourceTree = "<group>"; };
-		CBB09DF416E55D1900E1B742 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Hypno@2x.png"; path = "../Hypno@2x.png"; sourceTree = "<group>"; };
-		CBB09DF516E55D1900E1B742 /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Time.png; path = ../Time.png; sourceTree = "<group>"; };
-		CBB09DF616E55D1900E1B742 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Time@2x.png"; path = "../Time@2x.png"; sourceTree = "<group>"; };
-		CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HypnosisView.h; path = ../HypnosisView.h; sourceTree = "<group>"; };
-		CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HypnosisView.m; path = ../HypnosisView.m; sourceTree = "<group>"; };
+		CB65CE2D17203FDA005A177E /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		CB65CE2E17203FDA005A177E /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
+		CB65CE3117203FE7005A177E /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Time.png; sourceTree = "<group>"; };
+		CB65CE3217203FE7005A177E /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
+		CB65CE391720400F005A177E /* HypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisView.h; sourceTree = "<group>"; };
+		CB65CE3A1720400F005A177E /* HypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisView.m; sourceTree = "<group>"; };
+		CB65CE3B1720400F005A177E /* HypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HypnosisViewController.h; sourceTree = "<group>"; };
+		CB65CE3C1720400F005A177E /* HypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HypnosisViewController.m; sourceTree = "<group>"; };
 		CBD95EF016E3F37B006627F1 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
 		CBD95EF116E3F37B006627F1 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 		CBD95EF416E3F4E1006627F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TimeViewController.xib; sourceTree = "<group>"; };
@@ -97,13 +97,13 @@
 		CB526D3C16E3E9AB0002010D /* HypnoTime */ = {
 			isa = PBXGroup;
 			children = (
-				CBD95EEA16E3EE3E006627F1 /* HypnosisView.h */,
-				CBD95EEB16E3EE3E006627F1 /* HypnosisView.m */,
+				CB65CE391720400F005A177E /* HypnosisView.h */,
+				CB65CE3A1720400F005A177E /* HypnosisView.m */,
+				CB65CE3B1720400F005A177E /* HypnosisViewController.h */,
+				CB65CE3C1720400F005A177E /* HypnosisViewController.m */,
 				CBD95EF016E3F37B006627F1 /* TimeViewController.h */,
 				CBD95EF316E3F4E1006627F1 /* TimeViewController.xib */,
 				CBD95EF116E3F37B006627F1 /* TimeViewController.m */,
-				CB22C7B816E3EB6200C76DA8 /* HypnosisViewController.h */,
-				CB22C7B916E3EB6200C76DA8 /* HypnosisViewController.m */,
 				CB526D4516E3E9AB0002010D /* HypnoTimeAppDelegate.h */,
 				CB526D4616E3E9AB0002010D /* HypnoTimeAppDelegate.m */,
 				CB526D3D16E3E9AB0002010D /* Supporting Files */,
@@ -114,10 +114,10 @@
 		CB526D3D16E3E9AB0002010D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBB09DF316E55D1900E1B742 /* Hypno.png */,
-				CBB09DF416E55D1900E1B742 /* Hypno@2x.png */,
-				CBB09DF516E55D1900E1B742 /* Time.png */,
-				CBB09DF616E55D1900E1B742 /* Time@2x.png */,
+				CB65CE2D17203FDA005A177E /* Hypno.png */,
+				CB65CE2E17203FDA005A177E /* Hypno@2x.png */,
+				CB65CE3117203FE7005A177E /* Time.png */,
+				CB65CE3217203FE7005A177E /* Time@2x.png */,
 				CB526D3E16E3E9AB0002010D /* HypnoTime-Info.plist */,
 				CB526D3F16E3E9AB0002010D /* InfoPlist.strings */,
 				CB526D4216E3E9AB0002010D /* main.m */,
@@ -186,10 +186,10 @@
 				CB526D4B16E3E9AB0002010D /* Default@2x.png in Resources */,
 				CB526D4D16E3E9AB0002010D /* Default-568h@2x.png in Resources */,
 				CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */,
-				CBB09DF716E55D1900E1B742 /* Hypno.png in Resources */,
-				CBB09DF816E55D1900E1B742 /* Hypno@2x.png in Resources */,
-				CBB09DF916E55D1900E1B742 /* Time.png in Resources */,
-				CBB09DFA16E55D1900E1B742 /* Time@2x.png in Resources */,
+				CB65CE2F17203FDA005A177E /* Hypno.png in Resources */,
+				CB65CE3017203FDA005A177E /* Hypno@2x.png in Resources */,
+				CB65CE3317203FE7005A177E /* Time.png in Resources */,
+				CB65CE3417203FE7005A177E /* Time@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +202,9 @@
 			files = (
 				CB526D4316E3E9AB0002010D /* main.m in Sources */,
 				CB526D4716E3E9AB0002010D /* HypnoTimeAppDelegate.m in Sources */,
-				CB22C7BA16E3EB6200C76DA8 /* HypnosisViewController.m in Sources */,
-				CBD95EEC16E3EE3E006627F1 /* HypnosisView.m in Sources */,
 				CBD95EF216E3F37B006627F1 /* TimeViewController.m in Sources */,
+				CB65CE3D1720400F005A177E /* HypnosisView.m in Sources */,
+				CB65CE3E1720400F005A177E /* HypnosisViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
