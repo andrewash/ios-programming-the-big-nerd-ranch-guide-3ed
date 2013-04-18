@@ -110,6 +110,7 @@
 
 // Ch. 11, GOLD CHALLENGE
 - (IBAction)changeDateCreated:(id)sender {
-    
+    DateCreatedViewController *dateCreatedViewController = [[DateCreatedViewController alloc] init];
+    [[self navigationController] pushViewController:dateCreatedViewController animated:YES];
 }
 @end

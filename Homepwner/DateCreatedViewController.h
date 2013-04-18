@@ -5,5 +5,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DateCreatedViewController : UIViewController
+{
+    
+}
+- (void)finishEditingDateCreated;
 
 @end
