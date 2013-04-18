@@ -1,4 +1,6 @@
 ios-programming-the-big-nerd-ranch-guide-3ed
 ============================================
 
-Learning the book "iOS Programming: The Big Nerd Ranch Guide" (3rd ed.) -- examples; 3 finished challenges per chapter
+My solutions to Big Nerd Ranch's awesome iOS Programming book (3rd ed.)
+It's a joy to learn
+Fun examples too
