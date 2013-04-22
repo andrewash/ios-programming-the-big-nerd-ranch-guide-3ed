@@ -37,6 +37,8 @@ const float DISTANCE_TO_EDGE = 41.5;
     // Dispose of any resources that can be recreated.
 }
 
+//------------------------------------------------------------------------------------
+// Assignment #2, Q5 (Ch. 8, Gold Challenge)
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)x
 {
     // Return YES if incoming orientation is Portrait
@@ -45,6 +47,8 @@ const float DISTANCE_TO_EDGE = 41.5;
 }
 
 
+//------------------------------------------------------------------------------------
+// Assignment #2, Q5 (Ch. 8, Gold Challenge)
 // When app starts in landscape, correct the view
 // - this method adapted from http://goo.gl/HNyXw
 - (void)viewWillAppear:(BOOL)animated
@@ -55,13 +59,16 @@ const float DISTANCE_TO_EDGE = 41.5;
 }
 
 
+//------------------------------------------------------------------------------------
+// Assignment #2, Q5 (Ch. 8, Gold Challenge)
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation
                                          duration:(NSTimeInterval)duration
 {
     [self updateLayoutForNewOrientation:orientation];
 }
 
-
+//------------------------------------------------------------------------------------
+// Assignment #2, Q5 (Ch. 8, Gold Challenge)
 // the idea of generalizing this code into its own function comes from http://goo.gl/HNyXw
 - (void)updateLayoutForNewOrientation:(UIInterfaceOrientation)orientation
 {

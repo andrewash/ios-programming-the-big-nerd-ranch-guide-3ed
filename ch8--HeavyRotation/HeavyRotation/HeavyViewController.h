@@ -7,7 +7,7 @@
 
 @interface HeavyViewController : UIViewController
 {
-    IBOutlet UIButton* shiftingButton;
+    IBOutlet UIButton* shiftingButton;  // Assignment #2, Q5 (Ch. 8, Gold Challenge)
     IBOutlet UIImageView* shiftingImage;
 }
 @end
