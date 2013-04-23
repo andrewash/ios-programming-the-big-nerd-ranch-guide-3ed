@@ -5,6 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ListViewController : UITableViewController
+@interface ListViewController : UITableViewController <NSURLConnectionDataDelegate>
+{
+    NSURLConnection *connection;
+    NSMutableData *xmlData;
+}
+- (void)fetchEntries;
 
 @end
