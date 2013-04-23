@@ -1,12 +1,10 @@
 //
 //  NerdfeedAppDelegate.m
-//  Nerdfeed
-//
 //  Created by aash on 2013-04-22.
-//  Copyright (c) 2013 Zen Mensch Apps. All rights reserved.
-//
+
 
 #import "NerdfeedAppDelegate.h"
+#import "ListViewController.h"
 
 @implementation NerdfeedAppDelegate
 
@@ -14,6 +12,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // Designate root view controller, and second-class root view controller
+    ListViewController *lvc = [[ListViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+    [[self window] setRootViewController:masterNav];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

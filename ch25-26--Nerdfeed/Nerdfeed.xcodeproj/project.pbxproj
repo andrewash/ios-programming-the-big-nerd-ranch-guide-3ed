@@ -16,6 +16,7 @@
 		CBBA9C36172604E300213E99 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA9C35172604E300213E99 /* Default.png */; };
 		CBBA9C38172604E300213E99 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA9C37172604E300213E99 /* Default@2x.png */; };
 		CBBA9C3A172604E300213E99 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA9C39172604E300213E99 /* Default-568h@2x.png */; };
+		CBBA9C42172605BD00213E99 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA9C41172605BD00213E99 /* ListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		CBBA9C35172604E300213E99 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CBBA9C37172604E300213E99 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CBBA9C39172604E300213E99 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CBBA9C40172605BD00213E99 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		CBBA9C41172605BD00213E99 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 			children = (
 				CBBA9C32172604E300213E99 /* NerdfeedAppDelegate.h */,
 				CBBA9C33172604E300213E99 /* NerdfeedAppDelegate.m */,
+				CBBA9C40172605BD00213E99 /* ListViewController.h */,
+				CBBA9C41172605BD00213E99 /* ListViewController.m */,
 				CBBA9C2A172604E300213E99 /* Supporting Files */,
 			);
 			path = Nerdfeed;
@@ -167,6 +172,7 @@
 			files = (
 				CBBA9C30172604E300213E99 /* main.m in Sources */,
 				CBBA9C34172604E300213E99 /* NerdfeedAppDelegate.m in Sources */,
+				CBBA9C42172605BD00213E99 /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +289,7 @@
 				CBBA9C3F172604E300213E99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
