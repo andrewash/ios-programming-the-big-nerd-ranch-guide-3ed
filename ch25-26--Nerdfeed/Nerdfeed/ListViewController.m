@@ -5,6 +5,7 @@
 
 #import "ListViewController.h"
 #import "RSSChannel.h"
+#import "RSSItem.h"
 
 @implementation ListViewController
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -20,11 +21,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [[channel items] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:@"UITableViewCell"];
+    }
+    RSSItem *item = [[channel items] objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:[item title]];
+    
+    return cell;
 }
 
 - (void)fetchEntries {
