@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CBAD4528172A08E100CA9DFB /* RSSChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD4527172A08E100CA9DFB /* RSSChannel.m */; };
+		CBAD452B172A08EC00CA9DFB /* RSSItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD452A172A08EC00CA9DFB /* RSSItem.m */; };
 		CBBA9C24172604E300213E99 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBA9C23172604E300213E99 /* UIKit.framework */; };
 		CBBA9C26172604E300213E99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBA9C25172604E300213E99 /* Foundation.framework */; };
 		CBBA9C28172604E300213E99 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBBA9C27172604E300213E99 /* CoreGraphics.framework */; };
@@ -20,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CBAD4526172A08E100CA9DFB /* RSSChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSChannel.h; sourceTree = "<group>"; };
+		CBAD4527172A08E100CA9DFB /* RSSChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSChannel.m; sourceTree = "<group>"; };
+		CBAD4529172A08EC00CA9DFB /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItem.h; sourceTree = "<group>"; };
+		CBAD452A172A08EC00CA9DFB /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItem.m; sourceTree = "<group>"; };
 		CBBA9C20172604E300213E99 /* Nerdfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nerdfeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBA9C23172604E300213E99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBBA9C25172604E300213E99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +91,10 @@
 				CBBA9C33172604E300213E99 /* NerdfeedAppDelegate.m */,
 				CBBA9C40172605BD00213E99 /* ListViewController.h */,
 				CBBA9C41172605BD00213E99 /* ListViewController.m */,
+				CBAD4526172A08E100CA9DFB /* RSSChannel.h */,
+				CBAD4527172A08E100CA9DFB /* RSSChannel.m */,
+				CBAD4529172A08EC00CA9DFB /* RSSItem.h */,
+				CBAD452A172A08EC00CA9DFB /* RSSItem.m */,
 				CBBA9C2A172604E300213E99 /* Supporting Files */,
 			);
 			path = Nerdfeed;
@@ -173,6 +183,8 @@
 				CBBA9C30172604E300213E99 /* main.m in Sources */,
 				CBBA9C34172604E300213E99 /* NerdfeedAppDelegate.m in Sources */,
 				CBBA9C42172605BD00213E99 /* ListViewController.m in Sources */,
+				CBAD4528172A08E100CA9DFB /* RSSChannel.m in Sources */,
+				CBAD452B172A08EC00CA9DFB /* RSSItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

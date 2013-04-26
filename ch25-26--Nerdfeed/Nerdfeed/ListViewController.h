@@ -4,11 +4,15 @@
 
 
 #import <Foundation/Foundation.h>
+// a forward declaration; we'll import the header in the .m
+@class RSSChannel;
 
 @interface ListViewController : UITableViewController <NSURLConnectionDataDelegate>
 {
     NSURLConnection *connection;
     NSMutableData *xmlData;
+    
+    RSSChannel *channel;
 }
 - (void)fetchEntries;
 
