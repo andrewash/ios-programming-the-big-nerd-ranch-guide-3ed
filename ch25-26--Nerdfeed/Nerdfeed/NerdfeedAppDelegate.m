@@ -5,6 +5,8 @@
 
 #import "NerdfeedAppDelegate.h"
 #import "ListViewController.h"
+#import "WebViewController.h"
+
 
 @implementation NerdfeedAppDelegate
 
@@ -16,6 +18,12 @@
     // Designate root view controller, and second-class root view controller
     ListViewController *lvc = [[ListViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+    
+    // FYI - we are instantiating the wvc in the application delegate (& not in the lvc) to prep for Ch. 26,
+    // when we will use a UISplitViewController to present view controllers on the iPad
+    WebViewController *wvc = [[WebViewController alloc] init];
+    [lvc setWebViewController:wvc];
+    
     [[self window] setRootViewController:masterNav];
     
     self.window.backgroundColor = [UIColor whiteColor];

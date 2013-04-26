@@ -6,8 +6,11 @@
 #import "ListViewController.h"
 #import "RSSChannel.h"
 #import "RSSItem.h"
+#import "WebViewController.h"
 
 @implementation ListViewController
+@synthesize webViewController;
+
 - (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     
@@ -20,11 +23,13 @@
     return self;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
     return [[channel items] count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (cell == nil)
     {
@@ -35,6 +40,30 @@
     [[cell textLabel] setText:[item title]];
     
     return cell;
+}
+
+// Show the selected RSS item's linked article in an embedded web browser (UIWebView)
+- (void)tableView:(UITableView *)tableView
+    didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Push the web view controller onto the navigation stack - this implicitly
+    // creates the web view controller's view the first time through
+    [[self navigationController] pushViewController:webViewController animated:YES];
+    
+    // Grab the selected item
+    RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];
+    
+    // Construct a URL with the link string of the item
+    NSURL *url = [NSURL URLWithString:[entry link]];
+    
+    // Construct a request object with that URL
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    // Load the request into the web view
+    [[webViewController webView] loadRequest:req];
+    
+    // Set the title of the web view controller's navigation item
+    [[webViewController navigationItem] setTitle:[entry title]];    
 }
 
 - (void)fetchEntries {
