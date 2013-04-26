@@ -14,7 +14,7 @@ didStartElement:(NSString *)elementName
  qualifiedName:(NSString *)qName
     attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"\t\t%@ found a %@ element", self, elementName);
+    WSLog(@"\t\t%@ found a %@ element", self, elementName);
     
     if ([elementName isEqual:@"title"])
     {

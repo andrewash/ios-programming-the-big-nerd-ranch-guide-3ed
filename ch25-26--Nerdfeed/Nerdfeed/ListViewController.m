@@ -15,6 +15,7 @@
         [self fetchEntries];
     }
     
+    NSLog(@"ListViewController initialized");
     return self;
 }
 
@@ -80,14 +81,14 @@
     [[self tableView] reloadData];
     
     // DEBUG: Check our work in RSSChannel.m
-    NSLog(@"%@\n %@\n %@\n", channel, [channel title], [channel infoString]);
+    WSLog(@"%@\n %@\n %@\n", channel, [channel title], [channel infoString]);
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
                                         namespaceURI:(NSString *)namespaceURI
                                        qualifiedName:(NSString *)qName
                                           attributes:(NSDictionary *)attributeDict {
-    NSLog(@"%@ found a %@ element", self, elementName);
+    WSLog(@"%@ found a %@ element", self, elementName);
     if ([elementName isEqual:@"channel"])
     {
         // If the parser saw a channel, create new instance, store in our ivar

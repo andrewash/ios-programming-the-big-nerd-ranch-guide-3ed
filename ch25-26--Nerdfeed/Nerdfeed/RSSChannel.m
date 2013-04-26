@@ -28,7 +28,7 @@
       qualifiedName:(NSString *)qName
     attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"\t%@ found a %@ element", self, elementName);
+    WSLog(@"\t%@ found a %@ element", self, elementName);
     
     if ([elementName isEqual:@"title"])
     {

@@ -26,6 +26,7 @@
 		CBAD4527172A08E100CA9DFB /* RSSChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSChannel.m; sourceTree = "<group>"; };
 		CBAD4529172A08EC00CA9DFB /* RSSItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSItem.h; sourceTree = "<group>"; };
 		CBAD452A172A08EC00CA9DFB /* RSSItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSItem.m; sourceTree = "<group>"; };
+		CBAD452C172A132100CA9DFB /* Debug-ToggleWebServiceLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Debug-ToggleWebServiceLogging.h"; sourceTree = "<group>"; };
 		CBBA9C20172604E300213E99 /* Nerdfeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nerdfeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBA9C23172604E300213E99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBBA9C25172604E300213E99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +88,7 @@
 		CBBA9C29172604E300213E99 /* Nerdfeed */ = {
 			isa = PBXGroup;
 			children = (
+				CBAD452C172A132100CA9DFB /* Debug-ToggleWebServiceLogging.h */,
 				CBBA9C32172604E300213E99 /* NerdfeedAppDelegate.h */,
 				CBBA9C33172604E300213E99 /* NerdfeedAppDelegate.m */,
 				CBBA9C40172605BD00213E99 /* ListViewController.h */,
