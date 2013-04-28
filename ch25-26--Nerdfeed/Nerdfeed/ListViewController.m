@@ -137,7 +137,8 @@
     // note we can concatenate literal strings together on multiple
     // lines in this way - this results in a single NSString instance
     NSURL *url = [NSURL URLWithString:@"http://forums.bignerdranch.com/smartfeed.php?"
-                  @"limit=1_DAY&sort_by=standard&feed_type=RSS2.0&feed_style=COMPACT"];
+                  @"limit=7_DAY&sort_by=standard&feed_type=RSS2.0&feed_style=COMPACT"];
+        // FYI - discovered that this web service accepts query parameter "limit=(1_DAY|7_DAY)"
     
     // For Apple's Hot News feed, replace the line above with
     // NSURL *url = [NSURL URLWithString:@"http://www.apple.com/pr/feeds/pr.rss"];
