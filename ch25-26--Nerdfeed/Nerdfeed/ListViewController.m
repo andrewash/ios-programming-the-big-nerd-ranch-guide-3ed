@@ -68,17 +68,7 @@
     // Grab the selected item
     RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];
     
-    // Construct a URL with the link string of the item
-    NSURL *url = [NSURL URLWithString:[entry link]];
-    
-    // Construct a request object with that URL
-    NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    
-    // Load the request into the web view
-    [[webViewController webView] loadRequest:req];
-    
-    // Set the title of the web view controller's navigation item
-    [[webViewController navigationItem] setTitle:[entry title]];    
+    [webViewController listViewController:self handleObject:entry];
 }
 
 - (void)fetchEntries {

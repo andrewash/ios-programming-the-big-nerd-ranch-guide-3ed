@@ -4,6 +4,7 @@
 
 
 #import "WebViewController.h"
+#import "RSSItem.h"
 
 @implementation WebViewController
 - (void)loadView
@@ -31,5 +32,30 @@
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
         return YES;
     return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+- (void)listViewController:(ListViewController *)lvc
+              handleObject:(id)object
+{
+    // Cast the passed object to RSSItem
+    RSSItem *entry = object;
+    
+    // Make sure that we are really getting a RSSItem
+    if (![entry isKindOfClass:[RSSItem class]])
+        return;
+    
+    // Grab the info from the item and push it into the appropriate views
+    
+    //   construct a URL with the link string of the item
+    NSURL *url = [NSURL URLWithString:[entry link]];
+    
+    //   construct a request object with that URL
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    //   load the request into the web view
+    [[self webView] loadRequest:req];
+    
+    // Set the title of the web view controller's navigation item
+    [[self navigationItem] setTitle:[entry title]];
 }
 @end

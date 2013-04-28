@@ -19,3 +19,11 @@
 
 - (void)fetchEntries;
 @end
+
+// A new protocol names ListViewControllerDelegate
+@protocol ListViewControllerDelegate
+
+// Classes that conform to this protocol must implement this method:
+- (void)listViewController:(ListViewController *)lvc handleObject:(id)object;
+
+@end
