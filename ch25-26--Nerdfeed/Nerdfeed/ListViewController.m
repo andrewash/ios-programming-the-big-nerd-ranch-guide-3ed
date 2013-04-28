@@ -44,7 +44,7 @@
 //   instance of ChannelViewController
 - (void)showInfo:(id)sender
 {
-    // Create teh channel view controller
+    // Create the channel view controller
     ChannelViewController *channelViewController = [[ChannelViewController alloc]
                                                     initWithStyle:UITableViewStyleGrouped];
     
