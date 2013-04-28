@@ -8,7 +8,7 @@
 
 @class RSSChannel;
 
-@interface ChannelViewController : UITableViewController <ListViewControllerDelegate>
+@interface ChannelViewController : UITableViewController <ListViewControllerDelegate, UISplitViewControllerDelegate>
 {
     RSSChannel *channel;
 }

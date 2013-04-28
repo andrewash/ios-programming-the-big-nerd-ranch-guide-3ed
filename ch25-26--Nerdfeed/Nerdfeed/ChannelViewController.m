@@ -55,4 +55,29 @@
     
     [[self tableView] reloadData];
 }
+
+// When ListViewController becomes hidden, show a 'List' button in navbar, so users can see it
+// TODO: can I refactor to remove duplicate code? see WebViewController & ChannelViewcontroller
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    // If this bar button item doesn't have a title, it won't appear at all.
+    [barButtonItem setTitle:@"List"];
+    
+    // Take this bar button item and put it on the left side of our nav item.
+    [[self navigationItem] setLeftBarButtonItem:barButtonItem];
+}
+
+// When ListViewController becomes visible, remove/hide the 'List' button
+// TODO: can I refactor to remove duplicate code? see WebViewController & ChannelViewcontroller
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    // double-check that it's the correct button, even through we know it is
+    if (barButtonItem == [[self navigationItem] leftBarButtonItem])
+        [[self navigationItem] setLeftBarButtonItem:nil];
+}
 @end

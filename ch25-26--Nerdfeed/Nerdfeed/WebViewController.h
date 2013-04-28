@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 #include "ListViewController.h"
 
-@interface WebViewController : UIViewController <ListViewControllerDelegate>
+@interface WebViewController : UIViewController <ListViewControllerDelegate, UISplitViewControllerDelegate>
 
 @property (nonatomic, readonly) UIWebView *webView;
 @end
