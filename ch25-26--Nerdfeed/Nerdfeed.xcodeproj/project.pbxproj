@@ -20,6 +20,7 @@
 		CBBA9C38172604E300213E99 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA9C37172604E300213E99 /* Default@2x.png */; };
 		CBBA9C3A172604E300213E99 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA9C39172604E300213E99 /* Default-568h@2x.png */; };
 		CBBA9C42172605BD00213E99 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA9C41172605BD00213E99 /* ListViewController.m */; };
+		CBF33BBA172D8C9B0017062D /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF33BB9172D8C9B0017062D /* ChannelViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		CBBA9C39172604E300213E99 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CBBA9C40172605BD00213E99 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		CBBA9C41172605BD00213E99 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		CBF33BB8172D8C9B0017062D /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		CBF33BB9172D8C9B0017062D /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 				CBBA9C33172604E300213E99 /* NerdfeedAppDelegate.m */,
 				CBBA9C40172605BD00213E99 /* ListViewController.h */,
 				CBBA9C41172605BD00213E99 /* ListViewController.m */,
+				CBF33BB8172D8C9B0017062D /* ChannelViewController.h */,
+				CBF33BB9172D8C9B0017062D /* ChannelViewController.m */,
 				CBAD4526172A08E100CA9DFB /* RSSChannel.h */,
 				CBAD4527172A08E100CA9DFB /* RSSChannel.m */,
 				CBAD4529172A08EC00CA9DFB /* RSSItem.h */,
@@ -193,6 +198,7 @@
 				CBAD4528172A08E100CA9DFB /* RSSChannel.m in Sources */,
 				CBAD452B172A08EC00CA9DFB /* RSSItem.m in Sources */,
 				CBAD452F172A273500CA9DFB /* WebViewController.m in Sources */,
+				CBF33BBA172D8C9B0017062D /* ChannelViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

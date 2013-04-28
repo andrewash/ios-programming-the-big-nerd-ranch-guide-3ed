@@ -7,6 +7,7 @@
 #import "RSSChannel.h"
 #import "RSSItem.h"
 #import "WebViewController.h"
+#import "ChannelViewController.h"
 
 @implementation ListViewController
 @synthesize webViewController;
@@ -15,6 +16,12 @@
     self = [super initWithStyle:style];
     
     if (self) {
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithTitle:@"Info"
+                                                                style:UIBarButtonItemStyleBordered
+                                                               target:self
+                                                               action:@selector(showInfo:)];
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        
         // Kick off the NSURLConnection whenever the ListViewController is created
         [self fetchEntries];
     }
@@ -33,6 +40,43 @@
     return toInterfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
+// When "Info" button is tapped, the detail view controller (in split view) will be replaced with an
+//   instance of ChannelViewController
+- (void)showInfo:(id)sender
+{
+    // Create teh channel view controller
+    ChannelViewController *channelViewController = [[ChannelViewController alloc]
+                                                    initWithStyle:UITableViewStyleGrouped];
+    
+    if ([self splitViewController])
+    {
+        UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:channelViewController];
+        
+        // Create an array with our nav controller and this new VC's nav controller
+        NSArray *vcs = [NSArray arrayWithObjects:[self navigationController], nvc, nil];
+        
+        // Grab a pointer to the split view controller and reset its view controllers array.
+        [[self splitViewController] setViewControllers:vcs];
+        
+        // Make detail view controller the delegate of the split view controller
+        // - ignore this warning
+        [[self splitViewController] setDelegate:channelViewController];
+        
+        // If a row has been selected, deselect it so that a row is not selected when viewing the info
+        NSIndexPath *selectedRow = [[self tableView] indexPathForSelectedRow];
+        if (selectedRow)
+             [[self tableView] deselectRowAtIndexPath:selectedRow
+                                             animated:YES];
+    } else {  // for iPhones, iPod Touches (non-iPad devices)
+        
+        [[self navigationController] pushViewController:channelViewController
+                                               animated:YES];
+    }
+    
+    // Give the VC the channel object through the protocol message
+    [channelViewController listViewController:self
+                                 handleObject:channel];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
@@ -62,8 +106,22 @@
     // Check if this view controller (ListViewController) is part of a SplitViewController
     // If ListViewController is in a split view controller, we leave it to the UISplitViewController to place WebViewController on the screen (which it does, because it's in the svc's array of view controllers)
     if (![self splitViewController])
+    {
         [[self navigationController] pushViewController:webViewController
                                                animated:YES];
+    } else {
+        // We have to create a new navigation controller, as the old one
+        // was only retained by the split view controller and is now gone
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:webViewController];
+        
+        NSArray *vcs = [NSArray arrayWithObjects:[self navigationController], nav, nil];
+        
+        [[self splitViewController] setViewControllers:vcs];
+        
+        // Make the detail view controller the delegate of the split view controller
+        // - ignore this warning
+        [[self splitViewController] setDelegate:webViewController];
+    }
     
     // Grab the selected item
     RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];
