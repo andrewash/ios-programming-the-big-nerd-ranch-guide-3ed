@@ -18,5 +18,4 @@
 @property (nonatomic, strong) WebViewController *webViewController;
 
 - (void)fetchEntries;
-
 @end

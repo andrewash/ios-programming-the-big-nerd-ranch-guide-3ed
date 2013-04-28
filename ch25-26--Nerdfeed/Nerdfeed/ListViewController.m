@@ -23,6 +23,17 @@
     return self;
 }
 
+// shouldAutorotateToInterfaceOrientation:
+//   Deprecated in iOS 6.0. Override the supportedInterfaceOrientations and
+//   preferredInterfaceOrientationForPresentation methods instead.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        return YES;
+    return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     return [[channel items] count];
@@ -43,12 +54,16 @@
 }
 
 // Show the selected RSS item's linked article in an embedded web browser (UIWebView)
+// details: Pushes the web view controller onto the navigation stack - this implicitly
+//          creates the web view controller's view the first time through
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Push the web view controller onto the navigation stack - this implicitly
-    // creates the web view controller's view the first time through
-    [[self navigationController] pushViewController:webViewController animated:YES];
+    // Check if this view controller (ListViewController) is part of a SplitViewController
+    // If ListViewController is in a split view controller, we leave it to the UISplitViewController to place WebViewController on the screen (which it does, because it's in the svc's array of view controllers)
+    if (![self splitViewController])
+        [[self navigationController] pushViewController:webViewController
+                                               animated:YES];
     
     // Grab the selected item
     RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];

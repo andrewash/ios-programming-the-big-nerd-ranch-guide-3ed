@@ -22,4 +22,14 @@
 {
     return (UIWebView *)[self view];        // uses a C-style "cast"
 }
+
+// shouldAutorotateToInterfaceOrientation:
+//   Deprecated in iOS 6.0. Override the supportedInterfaceOrientations and
+//   preferredInterfaceOrientationForPresentation methods instead.
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+        return YES;
+    return toInterfaceOrientation == UIInterfaceOrientationPortrait;
+}
 @end
