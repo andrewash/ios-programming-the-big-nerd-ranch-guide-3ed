@@ -102,8 +102,7 @@ foundCharacters:(NSString *)str
         {
             // Print the location of the match in the string and the string itself
             NSTextCheckingResult *result = [matches objectAtIndex:0];
-            NSRange r = [result range];
-            WSLog(@"Match at {%d, %d} for %@!", r.location, r.length, itemTitle);
+            WSLog(@"Match at {%d, %d} for %@!", [result range].location, [result range].length, itemTitle);
             
             // One capture group, so two ranges, let's verify
             if ([result numberOfRanges] == 2)
