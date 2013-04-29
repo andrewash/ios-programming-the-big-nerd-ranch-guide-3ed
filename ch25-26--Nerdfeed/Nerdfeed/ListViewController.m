@@ -50,7 +50,15 @@
     
     if ([self splitViewController])
     {
+//        //-----------------------------------------------------------------------
+//        // Final Exam, Q1 (Ch. 26, Silver Challenge: Swapping the Master Button)
+//        UIBarButtonItem *bbiBeforeViewChange = [[webViewController navigationItem] leftBarButtonItem];
+//        [bbiBeforeViewChange setTitle:@"List"];
+//        //=======================================================================
+        
         UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:channelViewController];
+//        [[nvc navigationItem] setLeftBarButtonItem:bbiBeforeViewChange];
+////        [[channelViewController navigationItem] setLeftBarButtonItem:bbiBeforeViewChange];
         
         // Create an array with our nav controller and this new VC's nav controller
         NSArray *vcs = [NSArray arrayWithObjects:[self navigationController], nvc, nil];
@@ -67,6 +75,12 @@
         if (selectedRow)
              [[self tableView] deselectRowAtIndexPath:selectedRow
                                              animated:YES];
+        
+//        //-----------------------------------------------------------------------
+//        // Final Exam, Q1 (Ch. 26, Silver Challenge: Swapping the Master Button)
+//        [[[self splitViewController] navigationItem] setLeftBarButtonItem:bbiBeforeViewChange];
+//        //=======================================================================
+        
     } else {  // for iPhones, iPod Touches (non-iPad devices)
         
         [[self navigationController] pushViewController:channelViewController

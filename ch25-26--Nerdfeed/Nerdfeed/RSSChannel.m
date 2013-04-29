@@ -84,9 +84,11 @@ foundCharacters:(NSString *)str
 
 - (void)trimItemTitles
 {
-    // Create a regular expression with the pattern: Author
+    //-----------------------------------------------------------------------
+    // Final Exam, Q2 (Ch. 26, Silver Challenge: Processing the Reply)
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@".* :: (Re:)?(.*) :: .*" options:0 error:nil];
-    
+    //=======================================================================
+
     // Loop through every title of the items in channel
     for (RSSItem *i in items) {
         NSString *itemTitle = [i title];
