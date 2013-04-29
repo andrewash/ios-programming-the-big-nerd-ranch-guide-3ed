@@ -77,7 +77,7 @@
   invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     // double-check that it's the correct button, even through we know it is
-    if (barButtonItem == [[self navigationItem] leftBarButtonItem])
+    if ([barButtonItem action] == @selector(toggleMasterVisible:))  // fix for Final Exam, Q1 (Ch. 26, Silver Challenge: Swapping the Master Button)
         [[self navigationItem] setLeftBarButtonItem:nil];
 }
 @end
