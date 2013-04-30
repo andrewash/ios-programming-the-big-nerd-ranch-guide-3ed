@@ -68,7 +68,7 @@
              [[self tableView] deselectRowAtIndexPath:selectedRow
                                              animated:YES];
         
-        //-----------------------------------------------------------------------
+        //----------------------------------------------------------------------------------------------------------------------------------------------
         // Final Exam, Q1 (Ch. 26, Silver Challenge: Swapping the Master Button)
         if ([self interfaceOrientation] == UIInterfaceOrientationPortrait)
         {
@@ -78,7 +78,7 @@
         else {
             [[channelViewController navigationItem] setLeftBarButtonItem:nil];
         }
-        //=======================================================================
+        //==============================================================================================================================================
 
     } else {  // for iPhones, iPod Touches (non-iPad devices)
         
@@ -93,8 +93,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [[channel items] count];
+    return [[channel threadsOfItems] count];
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+// Final Exam, Q3 (Ch. 26, Gold Challenge: Showing Threads)
+//   iOS SDK: If the cell is enabled and the accessory type is UITableViewCellAccessoryDetailDisclosureButton,
+//            the accessory view tracks touches and, when tapped, sends the data-source object a tableView:accessoryButtonTappedForRowWithIndexPath: message.
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Accessory button tapped for index path (%d, %d)", [indexPath section], [indexPath row]);
+    //TODO: show all child posts when the disclosure indicator is tapped on the parent post (an example: see "Sounds" within the iOS Settings)
+}
+//================================================================================================================================================
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,8 +115,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:@"UITableViewCell"];
     }
-    RSSItem *item = [[channel items] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[item title]];
+    
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    // Final Exam, Q3 (Ch. 26, Gold Challenge: Showing Threads)
+    NSMutableArray *thread = [[channel threadsOfItems] objectAtIndex:[indexPath row]];
+    RSSItem *mostRecentItemInThread = [thread objectAtIndex:0];
+    [[cell textLabel] setText:[mostRecentItemInThread title]];
+    
+    // this cell gets a "disclosure" accessory IIF there is more than one post in this thread
+    if ([thread count] > 1)
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+    else
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+    //================================================================================================================================================
     
     return cell;
 }
@@ -137,7 +159,8 @@
     }
     
     // Grab the selected item
-    RSSItem *entry = [[channel items] objectAtIndex:[indexPath row]];
+    NSMutableArray *thread = [[channel threadsOfItems] objectAtIndex:[indexPath row]];
+    RSSItem *entry = [thread objectAtIndex:0];
     
     [webViewController listViewController:self handleObject:entry];
 }

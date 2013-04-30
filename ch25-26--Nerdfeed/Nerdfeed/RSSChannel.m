@@ -6,8 +6,17 @@
 #import "RSSChannel.h"
 #import "RSSItem.h"
 
+//----------------------------------------------------------------------------------------------------------------------------------------------
+// Final Exam, Q3 (Ch. 26, Gold Challenge: Showing Threads)
+// FYI: Extensive changes were made to this file for this challenge, especially:
+//   - new data structure, theadsOfItems, an NSMutableArray of NSMutableArrays; each "thread" is modeled as a NSMutableArray of RSSItems
+//   - keeping track of the currentItem, not just the currentString
+//   - an important new method: addItemToThreadOrCreateNewThreadFor:item
+//   - trimItemTitles enumerates each thread, and each item within each thread (a simple change)
+//   - threadsOfItems are updated in "parser:didEndElement", not "parser:didStartElement", b/c the item's contents weren't populated until then
+
 @implementation RSSChannel
-@synthesize items, title, infoString, parentParserDelegate;
+@synthesize threadsOfItems, title, infoString, parentParserDelegate;
 
 - (id)init
 {
@@ -17,7 +26,7 @@
     {
         // Create the container for the RSSItems this channel has;
         // we'll create the RSSItem class shortly.
-        items = [[NSMutableArray alloc] init];
+        threadsOfItems = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -43,19 +52,42 @@
     else if ([elementName isEqual:@"item"])
     {
         // When we find an item, create an instance of RSSItem
-        RSSItem *entry = [[RSSItem alloc] init];
+        currentItem = [[RSSItem alloc] init];
         
         // Set up its parent as ourselves so we can regain control of the parser
-        [entry setParentParserDelegate:self];
+        [currentItem setParentParserDelegate:self];
         
         // Hand-off parsing duties to the RSSItem
-        [parser setDelegate:entry];
-        
-        // Add the item to our array and release our hold on it
-        [items addObject:entry];
-        
+        [parser setDelegate:currentItem];
     }
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+// Final Exam, Q3 (Ch. 26, Gold Challenge: Showing Threads)
+//   assumptions: XML is sorted in reverse chronological order by "date posted" (most recent first) (source: BNR guide, pg. 441: "the server will return XML data that contains *the last* 20 posts")
+- (void)addItemToThreadOrCreateNewThreadFor:(RSSItem *)item
+{
+    NSMutableArray *matchingThread;
+    
+    for (NSMutableArray *thread in threadsOfItems) {
+        RSSItem *mostRecentItemInThread = [thread objectAtIndex:0];
+        if([mostRecentItemInThread threadID] == [item threadID])  // found an existing thread for the item we're trying to add
+        {
+            [thread addObject:item];
+            matchingThread = thread;
+            WSLog(@"Thread matched for item with postID=%d", [item postID]);
+            return;
+        }
+    }
+
+    if (!matchingThread) // this item is for a thread we've never seen before
+    {
+        matchingThread = [[NSMutableArray alloc] initWithObjects:item, nil];
+        [threadsOfItems addObject:matchingThread];
+        WSLog(@"Thread created with threadID=%d, based upon postID=%d", [[matchingThread objectAtIndex:0] threadID], [item postID]);
+    }
+}
+//================================================================================================================================================
 
 - (void)parser:(NSXMLParser *)parser
 foundCharacters:(NSString *)str
@@ -74,6 +106,12 @@ foundCharacters:(NSString *)str
     // ownership of it. If we weren't parsing such an element, currentString is nil already.
     currentString = nil;
     
+    //----------------------------------------------------------------------------------------------------------------------------------------------
+    // Final Exam, Q3 (Ch. 26, Gold Challenge: Showing Threads)
+    if ([elementName isEqual:@"item"])  // If the element that ended was an item, add it to the appropriate thread, or create a new thread for it, if it doesn't exist
+        [self addItemToThreadOrCreateNewThreadFor:currentItem];
+    //================================================================================================================================================
+
     // If the element that ended was the channel, give up control to who gave us control in the first place
     if ([elementName isEqual:@"channel"])
     {
@@ -90,28 +128,31 @@ foundCharacters:(NSString *)str
     //=======================================================================
 
     // Loop through every title of the items in channel
-    for (RSSItem *i in items) {
-        NSString *itemTitle = [i title];
-        
-        // Find matches in the title string. The range argument specifies how much of the
-        // title to search; in this case, all of it.
-        NSArray *matches = [regex matchesInString:itemTitle options:0 range:NSMakeRange(0, [itemTitle length])];
-        
-        // If there was a match
-        if ([matches count] > 0)
-        {
-            // Print the location of the match in the string and the string itself
-            NSTextCheckingResult *result = [matches objectAtIndex:0];
-            WSLog(@"Match at {%d, %d} for %@!", [result range].location, [result range].length, itemTitle);
+    for (NSMutableArray *thread in threadsOfItems)
+    {
+        for (RSSItem *i in thread) {
+            NSString *itemTitle = [i title];
             
-            // One capture group, so two ranges, let's verify
-            if ([result numberOfRanges] == 2)
+            // Find matches in the title string. The range argument specifies how much of the
+            // title to search; in this case, all of it.
+            NSArray *matches = [regex matchesInString:itemTitle options:0 range:NSMakeRange(0, [itemTitle length])];
+            
+            // If there was a match
+            if ([matches count] > 0)
             {
-                // Pull out the second range, which will be the capture group
-                NSRange r = [result rangeAtIndex:1];
+                // Print the location of the match in the string and the string itself
+                NSTextCheckingResult *result = [matches objectAtIndex:0];
+                WSLog(@"Match at {%d, %d} for %@!", [result range].location, [result range].length, itemTitle);
                 
-                // Set the title of the item to the string within the capture group
-                [i setTitle:[itemTitle substringWithRange:r]];
+                // One capture group, so two ranges, let's verify
+                if ([result numberOfRanges] == 2)
+                {
+                    // Pull out the second range, which will be the capture group
+                    NSRange r = [result rangeAtIndex:1];
+                    
+                    // Set the title of the item to the string within the capture group
+                    [i setTitle:[itemTitle substringWithRange:r]];
+                }
             }
         }
     }
