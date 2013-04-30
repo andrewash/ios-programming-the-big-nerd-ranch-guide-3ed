@@ -107,6 +107,7 @@
     // - see http://www.iphonesdkarticles.com/2009/03/uitableview-drill-down-table-view.html
     // - see http://goo.gl/Bn7nF
     NSMutableArray *thread = [[channel threadsOfItems] objectAtIndex:[indexPath row]];
+    NSString *alertMessage = @"Here are that item's children:\n";
   
     NSLog(@"Parent item of the thread at row %d has been selected. Here are its children:", [indexPath row]);
     for (RSSItem *item in thread) {
@@ -125,13 +126,14 @@
                     
                     // Set the title of the item to the string within the capture group
                     NSLog(@"\t%@", [[item title] substringWithRange:r]);
+                    alertMessage = [alertMessage stringByAppendingFormat:@"\t%@\n", [[item title] substringWithRange:r]];
                 }
             }
         }
     }
     // TODO: Remove this alert once the above TODO's have been implemented.
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops! You've reached the edge of this app's known world"
-                                                 message:@"Please check your NSLog output. The children of the item whose disclosure accessory you tapped are shown in the log."
+                                                 message:alertMessage
                                                 delegate:nil
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil]; // aa: cool! this is the first alert I've written
