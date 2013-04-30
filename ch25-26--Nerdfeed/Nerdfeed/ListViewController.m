@@ -102,8 +102,40 @@
 //            the accessory view tracks touches and, when tapped, sends the data-source object a tableView:accessoryButtonTappedForRowWithIndexPath: message.
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Accessory button tapped for index path (%d, %d)", [indexPath section], [indexPath row]);
-    //TODO: show all child posts when the disclosure indicator is tapped on the parent post (an example: see "Sounds" within the iOS Settings)
+    // TODO: Show all child posts when the disclosure indicator is tapped on the parent post (example of this design: see "Sounds" within the iOS Settings)
+    // - technical details: Create an instance of ListViewController, within our ListViewController, to "navigate a data-hierarchy using table views"
+    // - see http://www.iphonesdkarticles.com/2009/03/uitableview-drill-down-table-view.html
+    // - see http://goo.gl/Bn7nF
+    NSMutableArray *thread = [[channel threadsOfItems] objectAtIndex:[indexPath row]];
+  
+    NSLog(@"Parent item of the thread at row %d has been selected. Here are its children:", [indexPath row]);
+    for (RSSItem *item in thread) {
+        if ([thread indexOfObject:item] > 0)
+        {
+            NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@".* :: .* :: (.*)" options:0 error:nil];
+            NSArray *matches = [regex matchesInString:[item title] options:0 range:NSMakeRange(0, [[item title] length])];
+            // If there was a match
+            if ([matches count] == 1) {
+                NSTextCheckingResult *result = [matches objectAtIndex:0];
+                // One capture group, so two ranges, let's verify
+                if ([result numberOfRanges] == 2)
+                {
+                    // Pull out the second range, which will be the capture group
+                    NSRange r = [result rangeAtIndex:1];
+                    
+                    // Set the title of the item to the string within the capture group
+                    NSLog(@"\t%@", [[item title] substringWithRange:r]);
+                }
+            }
+        }
+    }
+    // TODO: Remove this alert once the above TODO's have been implemented.
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Oops! You've reached the edge of this app's known world"
+                                                 message:@"Please check your NSLog output. The children of the item whose disclosure accessory you tapped are shown in the log."
+                                                delegate:nil
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil]; // aa: cool! this is the first alert I've written
+    [av show];
 }
 //================================================================================================================================================
 
