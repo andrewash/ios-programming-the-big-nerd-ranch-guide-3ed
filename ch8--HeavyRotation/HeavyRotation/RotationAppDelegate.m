@@ -19,13 +19,23 @@
     // Tell it to start monitoring the accelerometer for orientation
     [device beginGeneratingDeviceOrientationNotifications];
     
+    //------------------------------------------------------------------------------------
+    // Ch. 8, Bronze Challenge
+    [device setProximityMonitoringEnabled:YES];
+    
     // Get the notifcation center for the app
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
-    // Add yourself as an observer
+    // register for orientation notifications
     [nc addObserver:self
            selector:@selector(orientationChanged:)
                name:UIDeviceOrientationDidChangeNotification
+             object:device];
+    
+    // register for proximity monitoring notifications
+    [nc addObserver:self
+           selector:@selector(proximityWarning:)
+               name:UIDeviceProximityStateDidChangeNotification
              object:device];
     
     HeavyViewController *hvc = [[HeavyViewController alloc] init];
@@ -67,6 +77,11 @@
 {
     // Log the constant that represents the current orientation
     NSLog(@"orientationChanged: %d", [[note object] orientation]);
+}
+
+- (void)proximityWarning:(NSNotification *)note
+{
+    [[[[self window] rootViewController] view] setBackgroundColor:[UIColor darkGrayColor]];
 }
 
 @end
