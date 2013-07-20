@@ -5,6 +5,8 @@
 #import "DetailViewController.h"
 #import "BNRItem.h"
 #import "DateCreatedViewController.h"
+#import "BNRImageStore.h"
+
 
 // fix for iPhone 5+
 // source http://stackoverflow.com/questions/9063100/xcode-ios-how-to-determine-whether-code-is-running-in-debug-release-build
@@ -118,5 +120,54 @@
     [dateCreatedViewController setChangeDateCreatedOnThisItem:item];
 
     [[self navigationController] pushViewController:dateCreatedViewController animated:YES];
+}
+
+- (IBAction)takePicture:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    // If our device has a camera, we want to take a picture, otherwise, we just pick from photo library
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    } else {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    // This line of code will generate a warning right now, ignore it
+    [imagePicker setDelegate:self];
+    
+    // Place image picker on the screen (modally)
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    // Get picked image from info dictionary
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    // Create a CFUUID object - it knows how to create unique identifier strings
+    CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
+        // FYI - "CF" prefix === Core Foundation, a collection of C "classes" & functions
+        //       "Ref" suffix === it's a pointer
+    
+    // Create a string from the unique identifier
+    CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID);
+    
+    // Use that unique ID to set our item's imageKey
+    NSString *key = (__bridge NSString *)newUniqueIDString;
+    [item setImageKey:key];
+    
+    // Store image in the BNRImageStore with this key
+    [[BNRImageStore sharedStore] setImage:image
+                                   forKey:[item imageKey]];
+    
+    // Core Foundation objects must be CFRelease'd, or a memory leak will result
+    CFRelease(newUniqueIDString);
+    CFRelease(newUniqueID);
+    
+    // Put that image onto the screen in our image view
+    [imageView setImage:image];
+    
+    // Take image picker off the screen -
+    // you must call this dismiss method
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

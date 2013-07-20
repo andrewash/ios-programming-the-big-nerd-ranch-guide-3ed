@@ -12,6 +12,7 @@
 @synthesize container;
 @synthesize containedItem;
 @synthesize itemName, serialNumber, dateCreated, valueInDollars;
+@synthesize imageKey;
 
 + (id)randomItem
 {

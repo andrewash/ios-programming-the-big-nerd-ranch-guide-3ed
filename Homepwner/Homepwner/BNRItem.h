@@ -26,4 +26,6 @@
 @property (nonatomic) int valueInDollars;
 @property (nonatomic, strong) NSDate *dateCreated;
 
+@property (nonatomic, copy) NSString *imageKey;
+
 @end
