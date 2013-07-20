@@ -141,6 +141,8 @@
     // If our device has a camera, we want to take a picture, otherwise, we just pick from photo library
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [imagePicker setAllowsEditing:YES];  // Ch. 12, BRONZE CHALLENGE, user can scale & crop an image before they "use" it in this app
+
     } else {
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     }
@@ -161,7 +163,8 @@
     }
     
     // Get picked image from info dictionary
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];  // Ch. 12, BRONZE CHALLENGE, use the edited image, instead of the original one
+        // SDK: "A dictionary containing the original image and the edited image."
     
     // Create a CFUUID object - it knows how to create unique identifier strings
     CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
