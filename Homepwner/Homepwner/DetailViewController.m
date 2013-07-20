@@ -59,6 +59,19 @@
     
     // Use filtered NSDate object to set dateLabel contents
     [dateLabel setText:[dateFormatter stringFromDate:[item dateCreated]]];
+    
+    NSString *imageKey = [item imageKey];
+    if (imageKey) {
+        // Get image from the image store, based on the key
+        UIImage *imageToDisplay = [[BNRImageStore sharedStore] imageForKey:imageKey];
+        
+        // Use that image to put the screen in imageView
+        [imageView setImage:imageToDisplay];
+    }
+    else {
+        // Clear the imageView
+        [imageView setImage:nil];
+    }
 }
 
 // Save changes to the item
@@ -140,6 +153,13 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString *oldImageKey = [item imageKey];
+    // Did the item already have an image?
+    if (oldImageKey) {
+        // Clear out the old image, from the image store
+        [[BNRImageStore sharedStore] deleteImageForKey:oldImageKey];
+    }
+    
     // Get picked image from info dictionary
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
