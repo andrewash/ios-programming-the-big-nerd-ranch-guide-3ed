@@ -20,4 +20,5 @@
 - (void)showDoneButtonInToolbar;
 - (IBAction)changeDateCreated:(id)sender;
 - (IBAction)takePicture:(id)sender;
+- (IBAction)backgroundTapped:(id)sender;
 @end

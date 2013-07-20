@@ -190,4 +190,8 @@
     // you must call this dismiss method
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)backgroundTapped:(id)sender {
+    [[self view] endEditing:YES];
+}
 @end
