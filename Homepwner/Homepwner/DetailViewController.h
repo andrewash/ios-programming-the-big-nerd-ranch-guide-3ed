@@ -14,6 +14,7 @@
     __weak IBOutlet UILabel *dateLabel;
     __weak IBOutlet UIButton *changeDateButton;
     __weak IBOutlet UIImageView *imageView;
+    __weak IBOutlet UIButton *removeImageButton;  // Ch. 12, SILVER CHALLENGE
 }
 @property (nonatomic, strong) BNRItem *item;
 
@@ -21,4 +22,5 @@
 - (IBAction)changeDateCreated:(id)sender;
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
+- (IBAction)removeImage:(id)sender;  // Ch. 12, SILVER CHALLENGE
 @end

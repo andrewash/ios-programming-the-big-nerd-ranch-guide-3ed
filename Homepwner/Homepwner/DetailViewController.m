@@ -67,10 +67,18 @@
         
         // Use that image to put the screen in imageView
         [imageView setImage:imageToDisplay];
+
+        // Ch. 12, SILVER CHALLENGE
+        // When this item has an image, users see a button that allows removing it
+        [removeImageButton setHidden:NO];
     }
     else {
         // Clear the imageView
         [imageView setImage:nil];
+        
+        // Ch. 12, SILVER CHALLENGE
+        // When this item doesn't have an image, hide the "remove image" button
+        [removeImageButton setHidden:YES];
     }
 }
 
@@ -189,6 +197,10 @@
     // Put that image onto the screen in our image view
     [imageView setImage:image];
     
+    // Ch. 12, SILVER CHALLENGE
+    // When this item has an image, users can remove it
+    [removeImageButton setHidden:NO];
+    
     // Take image picker off the screen -
     // you must call this dismiss method
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -196,5 +208,17 @@
 
 - (IBAction)backgroundTapped:(id)sender {
     [[self view] endEditing:YES];
+}
+
+// Ch. 12, SILVER CHALLENGE
+- (IBAction)removeImage:(id)sender {
+    NSString *imageKey = [item imageKey];
+    if (imageKey) {
+        [[BNRImageStore sharedStore] deleteImageForKey:imageKey];
+        // remember to update the imageView (to be cleared)
+        [imageView setImage:nil];
+    } else {
+        NSLog(@"ASSERT FAILED - \'remove image\' button was tapped while no image is present for this item");
+    }
 }
 @end
