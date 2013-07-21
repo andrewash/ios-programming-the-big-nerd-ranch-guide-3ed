@@ -6,6 +6,7 @@
 #import "BNRItem.h"
 #import "DateCreatedViewController.h"
 #import "BNRImageStore.h"
+#import "CameraOverlayView.h"
 
 
 // fix for iPhone 5+
@@ -158,6 +159,26 @@
     // This line of code will generate a warning right now, ignore it
     [imagePicker setDelegate:self];
     
+    //------------------------------------------------------------------------------------
+    // Ch. 12, Gold Challenge - "show a crosshair in the middle of the capture area"
+
+    // 1. Determine the frame within which the crosshair will be drawn
+    CGRect screenRect = [[[self view] window] bounds];
+    CGPoint centre;
+    centre.x = screenRect.origin.x + screenRect.size.width / 2.0;
+    centre.y = screenRect.origin.y + screenRect.size.height / 2.0;
+    CGSize size;
+    size.width = screenRect.size.width * 0.2;
+    size.height = screenRect.size.height * 0.2;
+    CGRect overlayRect = CGRectMake(centre.x - size.width/2, centre.y - size.height/2, size.width, size.height);
+    
+    // 2. Create the overlay's UIView within that frame
+    UIView *overlayView = [[CameraOverlayView alloc] initWithFrame:overlayRect];
+    
+    // 3. Tell the image picker to show an overlay view
+    [imagePicker setCameraOverlayView:overlayView];
+    //====================================================================================
+    
     // Place image picker on the screen (modally)
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
@@ -217,6 +238,8 @@
         [[BNRImageStore sharedStore] deleteImageForKey:imageKey];
         // remember to update the imageView (to be cleared)
         [imageView setImage:nil];
+        // remember to hide the "remove image" button
+        [removeImageButton setHidden:YES];
     } else {
         NSLog(@"ASSERT FAILED - \'remove image\' button was tapped while no image is present for this item");
     }

@@ -12,6 +12,7 @@
 		CB1AE2A2170537BB0063456D /* wallpaper-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB1AE29F170537BB0063456D /* wallpaper-568h@2x.jpg */; };
 		CB208DED171CC352008ADF5E /* DateCreatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB208DEB171CC352008ADF5E /* DateCreatedViewController.m */; };
 		CB208DEE171CC352008ADF5E /* DateCreatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB208DEC171CC352008ADF5E /* DateCreatedViewController.xib */; };
+		CB2EC805179C6CDB00B88283 /* CameraOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2EC804179C6CDB00B88283 /* CameraOverlayView.m */; };
 		CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB35825B16F7DC3F00E24837 /* BNRItem.m */; };
 		CB35825F16F7DD7400E24837 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB35825E16F7DD7400E24837 /* BNRItemStore.m */; };
 		CB3AC9A1171B2BD40099620B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3AC99F171B2BD40099620B /* DetailViewController.m */; };
@@ -37,6 +38,8 @@
 		CB208DEA171CC352008ADF5E /* DateCreatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCreatedViewController.h; sourceTree = "<group>"; };
 		CB208DEB171CC352008ADF5E /* DateCreatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCreatedViewController.m; sourceTree = "<group>"; };
 		CB208DEC171CC352008ADF5E /* DateCreatedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DateCreatedViewController.xib; sourceTree = "<group>"; };
+		CB2EC803179C6CDB00B88283 /* CameraOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraOverlayView.h; sourceTree = "<group>"; };
+		CB2EC804179C6CDB00B88283 /* CameraOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraOverlayView.m; sourceTree = "<group>"; };
 		CB35825A16F7DC3F00E24837 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
 		CB35825B16F7DC3F00E24837 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		CB35825D16F7DD7400E24837 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				CBE8C76016F7CC7300AE3BA8 /* ItemsViewController.h */,
 				CBE8C76116F7CC7300AE3BA8 /* ItemsViewController.m */,
 				CB7D3E62170A46FE0078D70D /* HeaderView.xib */,
+				CB2EC803179C6CDB00B88283 /* CameraOverlayView.h */,
+				CB2EC804179C6CDB00B88283 /* CameraOverlayView.m */,
 				CB3AC99E171B2BD40099620B /* DetailViewController.h */,
 				CB3AC99F171B2BD40099620B /* DetailViewController.m */,
 				CB3AC9A0171B2BD40099620B /* DetailViewController.xib */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBE8C75016F7C4F700AE3BA8 /* main.m in Sources */,
+				CB2EC805179C6CDB00B88283 /* CameraOverlayView.m in Sources */,
 				CBE8C75416F7C4F700AE3BA8 /* HomepwnerAppDelegate.m in Sources */,
 				CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */,
 				CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */,
