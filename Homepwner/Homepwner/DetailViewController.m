@@ -236,10 +236,9 @@
     NSString *imageKey = [item imageKey];
     if (imageKey) {
         [[BNRImageStore sharedStore] deleteImageForKey:imageKey];
-        // remember to update the imageView (to be cleared)
-        [imageView setImage:nil];
-        // remember to hide the "remove image" button
-        [removeImageButton setHidden:YES];
+        [item setImageKey:nil];
+        // remember to update the view (so image is cleared, and "remove image" button hidden)
+        [self viewWillAppear:NO];
     } else {
         NSLog(@"ASSERT FAILED - \'remove image\' button was tapped while no image is present for this item");
     }
