@@ -53,12 +53,12 @@
     }
     [[self view] setBackgroundColor:clr];
 
-//    // FYI - background image obtained for non-commercial purposes
-//        // source: http://3.bp.blogspot.com/-wVbOcUcUP58/UFHQBu3BneI/AAAAAAAAKt4/HG1mY0qcpPM/s1600/artistic-abstract-95.jpg
-//    UIImageView *backgroundImage = [[UIImageView alloc]
-//                                    initWithImage:[UIImage imageNamed:iPhone568ImageNamed(@"wallpaper.jpg")]];
-//    [[[self tableView] backgroundView] addSubview:backgroundImage];
+    // background image must be square, i.e. iPad 2x is 2048x2048, not ~1536x2048)
+    UIImageView *background = [[UIImageView alloc]
+                                    initWithImage:[UIImage imageNamed:@"background"]];
+    [[[self tableView] backgroundView] addSubview:background];
 }
+
 
 // When returning from the Detail View, reload the table, in case one of the items has changed
     // note: sounds inefficient, but that's how the book does it.
