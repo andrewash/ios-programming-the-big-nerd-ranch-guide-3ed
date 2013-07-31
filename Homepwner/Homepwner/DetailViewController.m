@@ -158,6 +158,13 @@
 }
 
 - (IBAction)takePicture:(id)sender {
+    if ([imagePickerPopover isPopoverVisible]) {
+        // If the popover is already up, get rid of it
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+        return;
+    }
+    
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
     // If our device has a camera, we want to take a picture, otherwise, we just pick from photo library
@@ -174,26 +181,48 @@
     
     //------------------------------------------------------------------------------------
     // Ch. 12, Gold Challenge - "show a crosshair in the middle of the capture area"
-
-    // 1. Determine the frame within which the crosshair will be drawn
-    CGRect screenRect = [[[self view] window] bounds];
-    CGPoint centre;
-    centre.x = screenRect.origin.x + screenRect.size.width / 2.0;
-    centre.y = screenRect.origin.y + screenRect.size.height / 2.0;
-    CGSize size;
-    size.width = screenRect.size.width * 0.2;
-    size.height = screenRect.size.height * 0.2;
-    CGRect overlayRect = CGRectMake(centre.x - size.width/2, centre.y - size.height/2, size.width, size.height);
-    
-    // 2. Create the overlay's UIView within that frame
-    UIView *overlayView = [[CameraOverlayView alloc] initWithFrame:overlayRect];
-    
-    // 3. Tell the image picker to show an overlay view
-    [imagePicker setCameraOverlayView:overlayView];
+    // iPhone-only feature
+    //   b/c CameraOverlayView may not be compatible with UIPopoverController
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        // 1. Determine the frame within which the crosshair will be drawn
+        CGRect screenRect = [[[self view] window] bounds];
+        CGPoint centre;
+        centre.x = screenRect.origin.x + screenRect.size.width / 2.0;
+        centre.y = screenRect.origin.y + screenRect.size.height / 2.0;
+        CGSize size;
+        size.width = screenRect.size.width * 0.2;
+        size.height = screenRect.size.height * 0.2;
+        CGRect overlayRect = CGRectMake(centre.x - size.width/2, centre.y - size.height/2, size.width, size.height);
+        
+        // 2. Create the overlay's UIView within that frame
+        UIView *overlayView = [[CameraOverlayView alloc] initWithFrame:overlayRect];
+        
+        // 3. Tell the image picker to show an overlay view
+        [imagePicker setCameraOverlayView:overlayView];
+    }
     //====================================================================================
     
-    // Place image picker on the screen (modally)
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    // Place image picker on the screen
+    // Check for iPad device before instantiating the popover controller
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
+    {
+        // Create a new popover controller that will display the imagepicker
+        imagePickerPopover = [[UIPopoverController alloc] initWithContentViewController:imagePicker];
+        [imagePickerPopover setDelegate:self];
+        
+        // Display the popover controller;
+        //  sender is the camera bar button item
+        [imagePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    } else {
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    NSLog(@"User dismissed popover");
+    imagePickerPopover = nil;  // to destroy the popover
+                               // we create a new one each time the "camera" bar button item is tapped
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -237,7 +266,15 @@
     
     // Take image picker off the screen -
     // you must call this dismiss method
-    [self dismissViewControllerAnimated:YES completion:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        // @iPhone: the image picker is presented modally. Dismiss it.
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        // @iPad: image picker is in the popover. Dismiss the popover.
+        [imagePickerPopover dismissPopoverAnimated:YES];
+        imagePickerPopover = nil;
+    }
 }
 
 - (IBAction)backgroundTapped:(id)sender {

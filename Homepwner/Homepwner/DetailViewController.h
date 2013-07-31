@@ -6,7 +6,7 @@
 
 @class BNRItem;
 
-@interface DetailViewController : UIViewController <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DetailViewController : UIViewController <UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
 {
     __weak IBOutlet UITextField *nameField;
     __weak IBOutlet UITextField *serialNumberField;
@@ -15,6 +15,8 @@
     __weak IBOutlet UIButton *changeDateButton;
     __weak IBOutlet UIImageView *imageView;
     __weak IBOutlet UIButton *removeImageButton;  // Ch. 12, SILVER CHALLENGE
+    
+    UIPopoverController *imagePickerPopover;
 }
 @property (nonatomic, strong) BNRItem *item;
 
