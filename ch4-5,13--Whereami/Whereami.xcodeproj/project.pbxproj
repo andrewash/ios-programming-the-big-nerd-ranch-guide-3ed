@@ -20,6 +20,7 @@
 		CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */; };
 		CB1E738516C5BA14001F0D4C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1E738416C5BA14001F0D4C /* CoreLocation.framework */; };
 		CB4FA07516D2EC42008C8B94 /* BNRMapPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */; };
+		CBA334B517AA61EB00969281 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA334B417AA61EB00969281 /* Images.xcassets */; };
 		CBD368D816CD988C00EA3260 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBD368D716CD988C00EA3260 /* MapKit.framework */; };
 		CBD368DA16CDA38400EA3260 /* Home (Thornhill, Ontario).gpx in Resources */ = {isa = PBXBuildFile; fileRef = CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		CB1E738416C5BA14001F0D4C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CB4FA07316D2EC42008C8B94 /* BNRMapPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRMapPoint.h; sourceTree = "<group>"; };
 		CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRMapPoint.m; sourceTree = "<group>"; };
+		CBA334B417AA61EB00969281 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBD368D716CD988C00EA3260 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CBD368D916CDA38400EA3260 /* Home (Thornhill, Ontario).gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "Home (Thornhill, Ontario).gpx"; path = "../Home (Thornhill, Ontario).gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +105,7 @@
 				CB4FA07316D2EC42008C8B94 /* BNRMapPoint.h */,
 				CB4FA07416D2EC42008C8B94 /* BNRMapPoint.m */,
 				CB1E737C16C5B9E6001F0D4C /* WhereamiViewController.xib */,
+				CBA334B417AA61EB00969281 /* Images.xcassets */,
 				CB1E736816C5B9E6001F0D4C /* Supporting Files */,
 			);
 			path = Whereami;
@@ -152,6 +155,11 @@
 				CLASSPREFIX = Whereami;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Zen Mensch Apps";
+				TargetAttributes = {
+					CB1E735D16C5B9E6001F0D4C = {
+						DevelopmentTeam = CDBCLK8WFP;
+					};
+				};
 			};
 			buildConfigurationList = CB1E735916C5B9E6001F0D4C /* Build configuration list for PBXProject "Whereami" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -177,6 +185,7 @@
 			files = (
 				CB1E736C16C5B9E6001F0D4C /* InfoPlist.strings in Resources */,
 				CB1E737416C5B9E6001F0D4C /* Default.png in Resources */,
+				CBA334B517AA61EB00969281 /* Images.xcassets in Resources */,
 				CB1E737616C5B9E6001F0D4C /* Default@2x.png in Resources */,
 				CB1E737816C5B9E6001F0D4C /* Default-568h@2x.png in Resources */,
 				CB1E737E16C5B9E6001F0D4C /* WhereamiViewController.xib in Resources */,
@@ -279,10 +288,15 @@
 		CB1E738216C5B9E6001F0D4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -290,10 +304,15 @@
 		CB1E738316C5B9E6001F0D4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Whereami/Whereami-Prefix.pch";
 				INFOPLIST_FILE = "Whereami/Whereami-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
