@@ -19,7 +19,11 @@
     UIPopoverController *imagePickerPopover;
 }
 @property (nonatomic, strong) BNRItem *item;
+@property (nonatomic, assign, getter=isNewItem) BOOL newItem;
+@property (nonatomic, copy) void (^dismissBlock)(void);  // a property named dismissBlock that points to a block
+                                                         // like a C-function, it has a return value and list of arguments
 
+- (id)initForNewItem:(BOOL)isNew;
 - (void)showDoneButtonInToolbar;
 - (IBAction)changeDateCreated:(id)sender;
 - (IBAction)takePicture:(id)sender;

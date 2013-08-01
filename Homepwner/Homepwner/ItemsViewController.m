@@ -182,6 +182,21 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // Add an item to the BNRItemStore (which creates a new random item)
     BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
     
+    DetailViewController *detailViewController = [[DetailViewController alloc] initForNewItem:YES];
+    [detailViewController setItem:newItem];
+    
+    // a block that reloads the ItemViewController's table  (i.e. [self] is ItemsViewController, in this case)
+    [detailViewController setDismissBlock:^{
+        [[self tableView] reloadData];
+    }];
+    
+    UINavigationController *navController = [[UINavigationController alloc]
+                                             initWithRootViewController:detailViewController];
+    [navController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    
+    [self presentViewController:navController animated:YES completion:nil];
+    
 //    int lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
 //    NSIndexPath *ip = [NSIndexPath indexPathForRow:lastRow inSection:0];
     
@@ -299,7 +314,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 // DETAIL VIEW METHODS
 // -------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailViewController *detailViewController = [[DetailViewController alloc] init];
+    DetailViewController *detailViewController = [[DetailViewController alloc] initForNewItem:NO];
 
     BNRItem *selectedItem = [ItemsViewController itemAtIndexPath:indexPath];
     

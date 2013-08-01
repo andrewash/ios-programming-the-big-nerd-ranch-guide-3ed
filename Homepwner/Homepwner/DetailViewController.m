@@ -6,6 +6,7 @@
 #import "BNRItem.h"
 #import "DateCreatedViewController.h"
 #import "BNRImageStore.h"
+#import "BNRItemStore.h"
 #import "CameraOverlayView.h"
 
 
@@ -20,6 +21,9 @@
 @implementation DetailViewController
 
 @synthesize item;
+@synthesize newItem;
+@synthesize dismissBlock;
+
 
 // Ch. 11, SILVER CHALLENGE
 - (id)init {
@@ -29,6 +33,38 @@
         [self showDoneButtonInToolbar];
     }
     return self;
+}
+
+// Ch. 13, new
+//   when user creates a new item:
+//      will present DetailViewController modally
+//   when user edits an existing item:
+//      DetailViewController is pushed onto the UINavigationController's stack, as before
+- (id)initForNewItem:(BOOL)isNew {
+    self = [super initWithNibName:@"DetailViewController" bundle:nil];
+    
+    if (self) {
+        if (isNew) {
+            [self setNewItem:YES];
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]
+                                         initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save:)];
+            [[self navigationItem] setRightBarButtonItem:doneItem];
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]
+                                           initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+            [[self navigationItem] setLeftBarButtonItem:cancelItem];
+        } else {
+            [self setNewItem:NO];
+        }
+    }
+    
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"Use initForNewItem:"
+                                 userInfo:nil];
+    return nil;
 }
 
 - (void)viewDidLoad {
@@ -114,21 +150,41 @@
     [[self navigationItem] setTitle:[item itemName]];
 }
 
-// Ch. 11, SILVER CHALLENGE
-// Users see "Save" in the navbar while a field is being edited (instead of "Done")
-//   "target-action" pattern => tapping "Save" will dismiss the keyboard
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    NSLog(@"textFieldDidBeginEditing event for field with value %@", [textField text]);
-    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:textField action:@selector(resignFirstResponder)];
-    
-    // Set this bar button item as the right item int he navigationItem
-    [[self navigationItem] setRightBarButtonItem:bbi];
+// save: cancel: are action methods for "BarButtonItem"s on the "create new item" view
+- (void)save:(id)sender
+{
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:dismissBlock];
 }
 
+- (void)cancel:(id)sender
+{
+    // If the user cancelled, then remove the BNRItem from the store
+    [[BNRItemStore sharedStore] removeItem:item];
+    [[self presentingViewController] dismissViewControllerAnimated:YES
+                                                        completion:dismissBlock];
+}
+
+
+
 // Ch. 11, SILVER CHALLENGE
+// When editing an item, users see "Save" in the navbar while a field is being edited (instead of "Done")
+//   "target-action" pattern => tapping "Save" will dismiss the keyboard
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if ([self isNewItem] == NO) {
+        NSLog(@"textFieldDidBeginEditing event for field with value %@", [textField text]);
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:textField action:@selector(resignFirstResponder)];
+        
+        // Set this bar button item as the right item int he navigationItem
+        [[self navigationItem] setRightBarButtonItem:bbi];
+    }
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    NSLog(@"textFieldDidEndEditing event for field with value %@", [textField text]);
-    [self showDoneButtonInToolbar];
+    if ([self isNewItem] == NO) {
+        NSLog(@"textFieldDidEndEditing event for field with value %@", [textField text]);
+        [self showDoneButtonInToolbar];
+    }
 }
 
 // Ch. 11, SILVER CHALLENGE
