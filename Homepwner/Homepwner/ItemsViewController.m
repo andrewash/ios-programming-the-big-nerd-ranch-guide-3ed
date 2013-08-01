@@ -193,8 +193,18 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *navController = [[UINavigationController alloc]
                                              initWithRootViewController:detailViewController];
     [navController setModalPresentationStyle:UIModalPresentationFormSheet];
-    [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
     
+    // Ch. 13, SILVER CHALLENEGE - DetailViewController is presented with UIModalTransitionStylePartialCurl, when creating a new item (iPhone only)  [NOTE - this is a little broken, because it hides the "Cancel" BBI at top-left]
+    switch([[UIDevice currentDevice] userInterfaceIdiom])
+    {
+        case UIUserInterfaceIdiomPad:
+            [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+            break;
+        case UIUserInterfaceIdiomPhone:
+            [navController setModalTransitionStyle:UIModalTransitionStylePartialCurl];
+            break;
+    }
+
     [self presentViewController:navController animated:YES completion:nil];
     
 //    int lastRow = [[[BNRItemStore sharedStore] allItems] indexOfObject:newItem];
