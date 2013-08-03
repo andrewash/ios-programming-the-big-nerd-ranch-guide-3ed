@@ -21,6 +21,7 @@
 		CB3AC9A2171B2BD40099620B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB3AC9A0171B2BD40099620B /* DetailViewController.xib */; };
 		CB46936E1798432300DD265C /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = CB46936D1798432300DD265C /* BNRImageStore.m */; };
 		CB7D3E63170A46FE0078D70D /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB7D3E62170A46FE0078D70D /* HeaderView.xib */; };
+		CB983E6F17AACAA900E973E2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB983E6E17AACAA900E973E2 /* Images.xcassets */; };
 		CBE8C74416F7C4F600AE3BA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */; };
 		CBE8C74616F7C4F600AE3BA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */; };
 		CBE8C74816F7C4F600AE3BA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8C74716F7C4F600AE3BA8 /* CoreGraphics.framework */; };
@@ -56,6 +57,7 @@
 		CB46936C1798432300DD265C /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		CB46936D1798432300DD265C /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
 		CB7D3E62170A46FE0078D70D /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		CB983E6E17AACAA900E973E2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBE8C74016F7C4F600AE3BA8 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,7 @@
 				CB208DEA171CC352008ADF5E /* DateCreatedViewController.h */,
 				CB208DEB171CC352008ADF5E /* DateCreatedViewController.m */,
 				CB208DEC171CC352008ADF5E /* DateCreatedViewController.xib */,
+				CB983E6E17AACAA900E973E2 /* Images.xcassets */,
 				CBE8C74A16F7C4F700AE3BA8 /* Supporting Files */,
 			);
 			path = Homepwner;
@@ -227,6 +230,7 @@
 				CBE8C75A16F7C4F700AE3BA8 /* Default-568h@2x.png in Resources */,
 				CBF9C31917A1758F00EDE38D /* background@2x~ipad.png in Resources */,
 				CB0C805C17A829FB00B749A6 /* background@2x~iphone.png in Resources */,
+				CB983E6F17AACAA900E973E2 /* Images.xcassets in Resources */,
 				CB1AE2A0170537BB0063456D /* wallpaper.jpg in Resources */,
 				CB0C805B17A829FB00B749A6 /* background-568h@2x~iphone.png in Resources */,
 				CB1AE2A1170537BB0063456D /* wallpaper@2x.jpg in Resources */,
@@ -330,6 +334,8 @@
 		CBE8C75E16F7C4F700AE3BA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
@@ -344,6 +350,8 @@
 		CBE8C75F16F7C4F700AE3BA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
