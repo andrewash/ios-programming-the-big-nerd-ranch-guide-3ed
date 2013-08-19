@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB0441CC17B471C90051C18D /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0441CB17B471C90051C18D /* HomepwnerItemCell.m */; };
+		CB0441CE17B4724D0051C18D /* HomepwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0441CD17B4724D0051C18D /* HomepwnerItemCell.xib */; };
 		CB0C805B17A829FB00B749A6 /* background-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0C805917A829FB00B749A6 /* background-568h@2x~iphone.png */; };
 		CB0C805C17A829FB00B749A6 /* background@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0C805A17A829FB00B749A6 /* background@2x~iphone.png */; };
 		CB1AE2A0170537BB0063456D /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB1AE29D170537BB0063456D /* wallpaper.jpg */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		CB0441CA17B471C90051C18D /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerItemCell.h; sourceTree = "<group>"; };
 		CB0441CB17B471C90051C18D /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerItemCell.m; sourceTree = "<group>"; };
+		CB0441CD17B4724D0051C18D /* HomepwnerItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepwnerItemCell.xib; sourceTree = "<group>"; };
 		CB0C805917A829FB00B749A6 /* background-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		CB0C805A17A829FB00B749A6 /* background@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x~iphone.png"; sourceTree = "<group>"; };
 		CB1AE29D170537BB0063456D /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				CB3AC9A0171B2BD40099620B /* DetailViewController.xib */,
 				CB0441CA17B471C90051C18D /* HomepwnerItemCell.h */,
 				CB0441CB17B471C90051C18D /* HomepwnerItemCell.m */,
+				CB0441CD17B4724D0051C18D /* HomepwnerItemCell.xib */,
 				CB7D3E62170A46FE0078D70D /* HeaderView.xib */,
 				CB2EC803179C6CDB00B88283 /* CameraOverlayView.h */,
 				CB2EC804179C6CDB00B88283 /* CameraOverlayView.m */,
@@ -239,6 +242,7 @@
 				CB1AE2A0170537BB0063456D /* wallpaper.jpg in Resources */,
 				CB0C805B17A829FB00B749A6 /* background-568h@2x~iphone.png in Resources */,
 				CB1AE2A1170537BB0063456D /* wallpaper@2x.jpg in Resources */,
+				CB0441CE17B4724D0051C18D /* HomepwnerItemCell.xib in Resources */,
 				CB1AE2A2170537BB0063456D /* wallpaper-568h@2x.jpg in Resources */,
 				CB7D3E63170A46FE0078D70D /* HeaderView.xib in Resources */,
 				CB3AC9A2171B2BD40099620B /* DetailViewController.xib in Resources */,

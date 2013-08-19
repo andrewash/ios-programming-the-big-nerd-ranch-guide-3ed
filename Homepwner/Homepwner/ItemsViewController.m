@@ -45,6 +45,7 @@
     [super viewDidLoad];
     NSLog(@"ItemsViewController loaded its view.");
 
+    //== Background View
     UIColor *clr = nil;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         clr = [UIColor colorWithRed:0.875 green:0.88 blue:0.91 alpha:1];
@@ -57,6 +58,15 @@
     UIImageView *background = [[UIImageView alloc]
                                     initWithImage:[UIImage imageNamed:@"background"]];
     [[[self tableView] backgroundView] addSubview:background];
+    
+    //== Custom table cells
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"HomepwnerItemCell" bundle:nil];
+    
+    // Register this NIB which contains the cell
+    [[self tableView] registerNib:nib
+           forCellReuseIdentifier:@"HomepwnerItemCell"];
+    
 }
 
 
