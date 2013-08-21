@@ -24,6 +24,7 @@
 		CB65CE3E1720400F005A177E /* HypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB65CE3C1720400F005A177E /* HypnosisViewController.m */; };
 		CBD95EF216E3F37B006627F1 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EF116E3F37B006627F1 /* TimeViewController.m */; };
 		CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD95EF316E3F4E1006627F1 /* TimeViewController.xib */; };
+		CBF8966A17C5397D00332D48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF8966917C5397D00332D48 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		CBD95EF016E3F37B006627F1 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
 		CBD95EF116E3F37B006627F1 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 		CBD95EF416E3F4E1006627F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TimeViewController.xib; sourceTree = "<group>"; };
+		CBF8966917C5397D00332D48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CBD95EF116E3F37B006627F1 /* TimeViewController.m */,
 				CB526D4516E3E9AB0002010D /* HypnoTimeAppDelegate.h */,
 				CB526D4616E3E9AB0002010D /* HypnoTimeAppDelegate.m */,
+				CBF8966917C5397D00332D48 /* Images.xcassets */,
 				CB526D3D16E3E9AB0002010D /* Supporting Files */,
 			);
 			path = HypnoTime;
@@ -158,6 +161,11 @@
 				CLASSPREFIX = HypnoTime;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Zen Mensch Apps";
+				TargetAttributes = {
+					CB526D3216E3E9AB0002010D = {
+						DevelopmentTeam = CDBCLK8WFP;
+					};
+				};
 			};
 			buildConfigurationList = CB526D2E16E3E9AB0002010D /* Build configuration list for PBXProject "HypnoTime" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -182,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB526D4116E3E9AB0002010D /* InfoPlist.strings in Resources */,
+				CBF8966A17C5397D00332D48 /* Images.xcassets in Resources */,
 				CB526D4916E3E9AB0002010D /* Default.png in Resources */,
 				CB526D4B16E3E9AB0002010D /* Default@2x.png in Resources */,
 				CB526D4D16E3E9AB0002010D /* Default-568h@2x.png in Resources */,
@@ -289,11 +298,16 @@
 		CB526D5116E3E9AB0002010D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HypnoTime/HypnoTime-Prefix.pch";
 				INFOPLIST_FILE = "HypnoTime/HypnoTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -301,11 +315,16 @@
 		CB526D5216E3E9AB0002010D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HypnoTime/HypnoTime-Prefix.pch";
 				INFOPLIST_FILE = "HypnoTime/HypnoTime-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
