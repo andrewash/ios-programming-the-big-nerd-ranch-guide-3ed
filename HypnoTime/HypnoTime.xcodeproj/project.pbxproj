@@ -25,6 +25,7 @@
 		CBD95EF216E3F37B006627F1 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD95EF116E3F37B006627F1 /* TimeViewController.m */; };
 		CBD95EF516E3F4E1006627F1 /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBD95EF316E3F4E1006627F1 /* TimeViewController.xib */; };
 		CBF8966A17C5397D00332D48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF8966917C5397D00332D48 /* Images.xcassets */; };
+		CBF8966C17C53AD800332D48 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF8966B17C53AD800332D48 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		CBD95EF116E3F37B006627F1 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 		CBD95EF416E3F4E1006627F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TimeViewController.xib; sourceTree = "<group>"; };
 		CBF8966917C5397D00332D48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CBF8966B17C53AD800332D48 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB526D3716E3E9AB0002010D /* UIKit.framework in Frameworks */,
 				CB526D3916E3E9AB0002010D /* Foundation.framework in Frameworks */,
+				CB526D3716E3E9AB0002010D /* UIKit.framework in Frameworks */,
 				CB526D3B16E3E9AB0002010D /* CoreGraphics.framework in Frameworks */,
+				CBF8966C17C53AD800332D48 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 		CB526D3516E3E9AB0002010D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBF8966B17C53AD800332D48 /* QuartzCore.framework */,
 				CB526D3616E3E9AB0002010D /* UIKit.framework */,
 				CB526D3816E3E9AB0002010D /* Foundation.framework */,
 				CB526D3A16E3E9AB0002010D /* CoreGraphics.framework */,
