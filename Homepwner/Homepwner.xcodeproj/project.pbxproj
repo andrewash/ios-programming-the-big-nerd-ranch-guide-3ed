@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CB0441CC17B471C90051C18D /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0441CB17B471C90051C18D /* HomepwnerItemCell.m */; };
 		CB0441CE17B4724D0051C18D /* HomepwnerItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB0441CD17B4724D0051C18D /* HomepwnerItemCell.xib */; };
+		CB04BFB2183EC0FA003099C5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB04BFB1183EC0FA003099C5 /* CoreData.framework */; };
+		CB04BFB5183EC1B1003099C5 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB04BFB3183EC1B1003099C5 /* Homepwner.xcdatamodeld */; };
 		CB0C805B17A829FB00B749A6 /* background-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0C805917A829FB00B749A6 /* background-568h@2x~iphone.png */; };
 		CB0C805C17A829FB00B749A6 /* background@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB0C805A17A829FB00B749A6 /* background@2x~iphone.png */; };
 		CB1AE2A0170537BB0063456D /* wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB1AE29D170537BB0063456D /* wallpaper.jpg */; };
@@ -42,6 +44,8 @@
 		CB0441CA17B471C90051C18D /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomepwnerItemCell.h; sourceTree = "<group>"; };
 		CB0441CB17B471C90051C18D /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomepwnerItemCell.m; sourceTree = "<group>"; };
 		CB0441CD17B4724D0051C18D /* HomepwnerItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomepwnerItemCell.xib; sourceTree = "<group>"; };
+		CB04BFB1183EC0FA003099C5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CB04BFB4183EC1B1003099C5 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
 		CB0C805917A829FB00B749A6 /* background-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		CB0C805A17A829FB00B749A6 /* background@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x~iphone.png"; sourceTree = "<group>"; };
 		CB1AE29D170537BB0063456D /* wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wallpaper.jpg; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB04BFB2183EC0FA003099C5 /* CoreData.framework in Frameworks */,
 				CBE8C74416F7C4F600AE3BA8 /* UIKit.framework in Frameworks */,
 				CBE8C74616F7C4F600AE3BA8 /* Foundation.framework in Frameworks */,
 				CBE8C74816F7C4F600AE3BA8 /* CoreGraphics.framework in Frameworks */,
@@ -116,6 +121,7 @@
 		CBE8C74216F7C4F600AE3BA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB04BFB1183EC0FA003099C5 /* CoreData.framework */,
 				CBE8C74316F7C4F600AE3BA8 /* UIKit.framework */,
 				CBE8C74516F7C4F600AE3BA8 /* Foundation.framework */,
 				CBE8C74716F7C4F600AE3BA8 /* CoreGraphics.framework */,
@@ -126,6 +132,7 @@
 		CBE8C74916F7C4F600AE3BA8 /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				CB04BFB3183EC1B1003099C5 /* Homepwner.xcdatamodeld */,
 				CB35825A16F7DC3F00E24837 /* BNRItem.h */,
 				CB35825B16F7DC3F00E24837 /* BNRItem.m */,
 				CB35825D16F7DD7400E24837 /* BNRItemStore.h */,
@@ -263,6 +270,7 @@
 				CBE8C75416F7C4F700AE3BA8 /* HomepwnerAppDelegate.m in Sources */,
 				CBE8C76216F7CC7300AE3BA8 /* ItemsViewController.m in Sources */,
 				CB35825C16F7DC3F00E24837 /* BNRItem.m in Sources */,
+				CB04BFB5183EC1B1003099C5 /* Homepwner.xcdatamodeld in Sources */,
 				CB46936E1798432300DD265C /* BNRImageStore.m in Sources */,
 				CB0441CC17B471C90051C18D /* HomepwnerItemCell.m in Sources */,
 				CB35825F16F7DD7400E24837 /* BNRItemStore.m in Sources */,
@@ -350,7 +358,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -366,7 +374,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Homepwner/Homepwner-Prefix.pch";
 				INFOPLIST_FILE = "Homepwner/Homepwner-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -395,6 +403,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB04BFB3183EC1B1003099C5 /* Homepwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB04BFB4183EC1B1003099C5 /* Homepwner.xcdatamodel */,
+			);
+			currentVersion = CB04BFB4183EC1B1003099C5 /* Homepwner.xcdatamodel */;
+			path = Homepwner.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CBE8C73816F7C4F600AE3BA8 /* Project object */;
 }
